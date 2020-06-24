@@ -133,7 +133,7 @@ Clip(101_1b1_Al_sc_Meditron, c=0, w=0, (0.036s, 0.579s))
 
 # This line forces sound data for clips with patient id 101 to be loaded
 # other clips are not loaded until requested
->>> [clips.sound_data for clip in clips if clip.patient_id=="101"]
+>>> [clips.sound_data for clip in clips if clip.patient_id==101]
 [array([-0.0486145 , -0.04852295, -0.04833984, ..., -0.0869751 ,
         -0.08694458, -0.08709717], dtype=float32),
  array([-0.08721924, -0.08724976, -0.08721924, ..., -0.02172852,
