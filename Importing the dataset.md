@@ -26,27 +26,27 @@ Each recording is accompanied by a `txt` file with the same name in which each l
 
 `class Clip` represents each clip in the sound recording. Each clip contains a crackle and/or a wheeze or neither.  Information contained in the `Clip` object is listed below:
 
-* `patient_id` is an integer representing the patient id
+* `patient_id` is an `int` representing the patient id
 
-* `rec_i` is a string representing the recording index
+* `rec_i` is a `str` representing the recording index
 
-* `chest_loc` is a string representing the chest location 
+* `chest_loc` is a `str` representing the chest location 
 
-* `acq_mode` is a string representing the acquisition mode (`sc` or `mc`)
+* `acq_mode` is a `str` representing the acquisition mode (`sc` or `mc`)
 
-* `rec_equipment` is a string representing the recording equipment
+* `rec_equipment` is a `str` representing the recording equipment
 
-* `crackle` is a boolean value representing presence of crackle in the clip
+* `crackle` is a `bool` value representing presence of crackle in the clip
 
-* `wheeze` is a boolean value representing presence of crackle in the clip
+* `wheeze` is a `bool` value representing presence of crackle in the clip
 
-* `start_t` is a float that shows the starting time of the clip
+* `start_t` is a `float` that shows the starting time of the clip
 
-* `end_t` is a float that shows the end time of the clip
+* `end_t` is a `float that shows the end time of the clip
 
-* `sr` is an integer representing the sampling rate in Hz
+* `sr` is an `int` representing the sampling rate in Hz
 
-* `sound_data` is a numpy array of float32 representing the sound data of the clip
+* `sound_data` is a `numpy.array` of `float32` representing the sound data of the clip
 
 * `recording` is an object which represents the underlying sound file that the clip is taken from. It doesn't need to be accessed but it is used for the lazy loading situation
 
