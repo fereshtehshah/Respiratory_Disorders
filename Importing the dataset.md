@@ -42,7 +42,7 @@ Thie class represents each clip in the sound recording. Each clip contains a cra
 
 * `crackle` is a `bool` value representing presence of crackle in the clip
 
-* `wheeze` is a `bool` value representing presence of crackle in the clip
+* `wheeze` is a `bool` value representing presence of wheeze in the clip
 
 * `start_t` is a `float` that shows the starting time of the clip
 
