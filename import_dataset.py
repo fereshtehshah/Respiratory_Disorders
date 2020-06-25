@@ -9,6 +9,7 @@ import librosa
 from os import listdir
 from os.path import isfile, join, splitext
 import os.path
+from tqdm import tqdm
 
 
 class Recording:
@@ -120,5 +121,5 @@ def import_all_files(directory, sr=None, lazy=False):
     filenames = [f.split(".")[0] for f in listdir(directory)
                  if isfile(join(directory, f)) and f.split(".")[1] == "wav"]
 
-    clips = [Clip.generate_from_file(join(directory,f), sr=sr, lazy=lazy) for f in filenames]
+    clips = [Clip.generate_from_file(join(directory,f), sr=sr, lazy=lazy) for f in tqdm(filenames)]
     return clips
