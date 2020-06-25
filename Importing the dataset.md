@@ -74,10 +74,7 @@ Example for loading all files into the memory using `import_all_files()` functio
 
 ```python
 directory = "C:\\Users\\Serhat\\OneDrive - Georgia Institute of Technology\\Classes\\CS 7641\\project\\110374_267422_bundle_archive\\Respiratory_Sound_Database\\Respiratory_Sound_Database\\audio_and_txt_files"
-clips_2d = import_all_files(directory) 
-# clips_2d is a 2D list where first index represents the sound file and
-# second index points to clips in that sound file
-clips = [clip for clips in clips_2d for clip in clips] # flat array containing all clips
+clips = import_all_files(directory) # flat array containing all clips
 ```
 
 Each member of the `clips` array will be a `Clip`
@@ -129,9 +126,8 @@ As it can be seen from the examples, there might be cases where only a small gro
 
 ```python
 directory = "C:\\Users\\Serhat\\OneDrive - Georgia Institute of Technology\\Classes\\CS 7641\\project\\110374_267422_bundle_archive\\Respiratory_Sound_Database\\Respiratory_Sound_Database\\audio_and_txt_files"
-clips_2d = import_all_files(directory, lazy=True) 
+clips = import_all_files(directory, lazy=True) 
 # Runs faster since sound files are not loaded
-clips = [clip for clips in clips_2d for clip in clips] # flat array containing all clips
 ```
 
 All metada about clips are still accesible
