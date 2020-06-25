@@ -6,7 +6,7 @@ File names of the recordings are in the following format: `101_1b1_Al_sc_AKGC417
 
 | Patient number         | Recording index                        | Chest location                                                                                                            | Acquisition mode                              | Recording equipment                                         |
 | ---------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- | ----------------------------------------------------------- |
-| `101`, `102` ... `206` | *What does recording index represent?* | `Tc` (Trachea)<br/>`Al`(Anterior left)<br/>`Ar` (Anterior right)<br/>`Pl`(Posterior left)<br/>`Pr` (Posterior right)<br/> | `sc` (single channel) or `mc` (multi channel) | `AKGC417L`<br/>`LittC2SE`<br/>`Litt3200`<br/>`Meditron`<br/ |
+| `101`, `102` ... `206` | *What does recording index represent?* | `Tc` (Trachea)<br/>`Al`(Anterior left)<br/>`Ar` (Anterior right)<br/>`Pl`(Posterior left)<br/>`Pr` (Posterior right)<br/> | `sc` (single channel) or `mc` (multi channel) | `AKGC417L`<br/>`LittC2SE`<br/>`Litt3200`<br/>`Meditron`|
 
 Each recording is accompanied by a `txt` file with the same name in which each line contains four columns. These columns are
 
