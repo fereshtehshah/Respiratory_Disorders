@@ -20,11 +20,15 @@ Each recording is accompanied by a `txt` file with the same name in which each l
 
 # Function and Class Reference
 
-`import_all_files(directory, sr=None, lazy=False)` This function reads all sound and annotation files in the given `directory` and returns a 2D list of `Clip` objects for each cycle in each recording. If there are `n` recordings in the given directory, the output of this function will be a list of `n` lists  where each list contains `Clip`s of the corresponding recording. Sound files are resampled to the sampling rate given by `sr`. Original sampling rate is preserved if `sr` is not provided. Argument `lazy` determines whether all sound files are read into the memory at the time of creation of each clip object. When the argument `lazy` is `False`, which is the default value, all sound clips are read and loaded into the memory of `Clip` objects. If `lazy` is `True`,  sound recordings are not loaded into `Clip` objects but all other annotations are. In that case sound files are loaded the first time the user tries to access the sound data. This might be useful in cases when only some of the clips are going to be used and the user doesn't want to spend time and memory to load all sound data but still needs to have all clip objects with annotations so as to choose which ones to load.
+## `import_all_files(directory, sr=None, lazy=False)`
+
+This function reads all sound and annotation files in the given `directory` and returns a 2D list of `Clip` objects for each cycle in each recording. If there are `n` recordings in the given directory, the output of this function will be a list of `n` lists  where each list contains `Clip`s of the corresponding recording. Sound files are resampled to the sampling rate given by `sr`. Original sampling rate is preserved if `sr` is not provided. Argument `lazy` determines whether all sound files are read into the memory at the time of creation of each clip object. When the argument `lazy` is `False`, which is the default value, all sound clips are read and loaded into the memory of `Clip` objects. If `lazy` is `True`,  sound recordings are not loaded into `Clip` objects but all other annotations are. In that case sound files are loaded the first time the user tries to access the sound data. This might be useful in cases when only some of the clips are going to be used and the user doesn't want to spend time and memory to load all sound data but still needs to have all clip objects with annotations so as to choose which ones to load.
 
 
 
-`class Clip` represents each clip in the sound recording. Each clip contains a crackle and/or a wheeze or neither.  Information contained in the `Clip` object is listed below:
+## `class Clip`
+
+Thie class represents each clip in the sound recording. Each clip contains a crackle and/or a wheeze or neither.  Information contained in the `Clip` object is listed below:
 
 * `patient_id` is an `int` representing the patient id
 
@@ -52,11 +56,17 @@ Each recording is accompanied by a `txt` file with the same name in which each l
 
 Functions defined in `Clip` are utility functions used for generating clips from the the recording and annotation files. 
 
-`Clip.generate_from_file(filename, sr=None, lazy=False)` This function can be used for generating clip objects from the given file location in `filename`. If `sr` is provided, the sound file will be resampled to the given value, otherwise original sampling rate is preserved.  If`lazy`  is `True`,  the sound file is not read into the memory at the time of creating the clip object, but all other information about the clip is saved. Sound data is loaded the first time the user tries to access `sound_data` of the object. 
-
-`clip.recording_name()` returns the name of the recording that the clip is taken from.
 
 
+### `Clip.generate_from_file(filename, sr=None, lazy=False)`
+
+This function can be used for generating clip objects from the given file location in `filename`. If `sr` is provided, the sound file will be resampled to the given value, otherwise original sampling rate is preserved.  If`lazy`  is `True`,  the sound file is not read into the memory at the time of creating the clip object, but all other information about the clip is saved. Sound data is loaded the first time the user tries to access `sound_data` of the object. 
+
+
+
+### `clip.recording_name()`
+
+Returns the name of the recording that the clip is taken from.
 
 # Examples
 
@@ -113,7 +123,6 @@ Clips can be grouped based on specific criteria
         0.1685791 ], dtype=float32),
  array([ 0.1685791 ,  0.16851807,  0.16860962, ..., -0.06219482,
         -0.06234741, -0.06213379], dtype=float32)]
-
 ```
 
 As it can be seen from the examples, there might be cases where only a small group of clips might be required. In those cases, it might be useful to use lazy importing of the clips so as to prevent waiting for too long for all clips to be loaded and to save memory.
