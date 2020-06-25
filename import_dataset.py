@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Jun 23 22:34:13 2020
-
 @author: Serhat
 """
 import numpy as np
@@ -117,14 +116,24 @@ class Clip:
 
 
 def import_all_files(directory, sr=None, lazy=False):
-    # Get a list of files in the directory without the extension
-    filenames = [f.split(".")[0] for f in listdir(directory)
-                 if isfile(join(directory, f)) and f.split(".")[1] == "wav"]
+    # Get a set of files (to prevent duplicates) in the directory
+    # without the extension
+    filenames = set(splitext(f)[0].split()[0] for f in listdir(directory)
+                    if isfile(join(directory, f)))
 
     # This produces a list of lists of clips
-    clips = [Clip.generate_from_file(join(directory,f), sr=sr, lazy=lazy) for f in tqdm(filenames,"Files to Clips")]
-    
+    clips = [Clip.generate_from_file(join(directory, f), sr=sr, lazy=lazy)
+             for f in tqdm(filenames, "Files to Clips")]
+
     # This flattens it into a single list of clips
     clips = [item for sublist in tqdm(clips) for item in sublist]
-    
+
     return clips
+
+
+if __name__ == "__main__":
+    # execute only if run as a script
+    directory = "C:\\Users\\Serhat\\OneDrive - Georgia Institute of Technology\\Classes\\CS 7641\\project\\110374_267422_bundle_archive\\Respiratory_Sound_Database\\Respiratory_Sound_Database\\audio_and_txt_files"
+    clips = import_all_files(directory, lazy=True)
+    
+    print(set(clip.rec_equipment for clip in clips)) # print the list of recording equipments

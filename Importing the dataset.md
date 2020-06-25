@@ -73,11 +73,10 @@ Returns the name of the recording that the clip is taken from.
 Example for loading all files into the memory using `import_all_files()` function:
 
 ```python
-directory = "C:\\Users\\Serhat\\OneDrive - Georgia Institute of Technology\\Classes\\CS 7641\\project\\110374_267422_bundle_archive\\Respiratory_Sound_Database\\Respiratory_Sound_Database\\audio_and_txt_files"
-clips_2d = import_all_files(directory) 
-# clips_2d is a 2D list where first index represents the sound file and
-# second index points to clips in that sound file
-clips = [clip for clips in clips_2d for clip in clips] # flat array containing all clips
+>>> directory = "C:\\Users\\Serhat\\OneDrive - Georgia Institute of Technology\\Classes\\CS 7641\\project\\110374_267422_bundle_archive\\Respiratory_Sound_Database\\Respiratory_Sound_Database\\audio_and_txt_files"
+>>> clips = import_all_files(directory) # flat array containing all clips
+Files to Clips: 100%|██████████| 920/920 [01:40<00:00,  9.15it/s]
+100%|██████████| 920/920 [00:00<00:00, 592743.42it/s]
 ```
 
 Each member of the `clips` array will be a `Clip`
@@ -128,10 +127,10 @@ Clips can be grouped based on specific criteria
 As it can be seen from the examples, there might be cases where only a small group of clips might be required. In those cases, it might be useful to use lazy importing of the clips so as to prevent waiting for too long for all clips to be loaded and to save memory.
 
 ```python
-directory = "C:\\Users\\Serhat\\OneDrive - Georgia Institute of Technology\\Classes\\CS 7641\\project\\110374_267422_bundle_archive\\Respiratory_Sound_Database\\Respiratory_Sound_Database\\audio_and_txt_files"
-clips_2d = import_all_files(directory, lazy=True) 
-# Runs faster since sound files are not loaded
-clips = [clip for clips in clips_2d for clip in clips] # flat array containing all clips
+>>> directory = "C:\\Users\\Serhat\\OneDrive - Georgia Institute of Technology\\Classes\\CS 7641\\project\\110374_267422_bundle_archive\\Respiratory_Sound_Database\\Respiratory_Sound_Database\\audio_and_txt_files"
+>>> clips = import_all_files(directory, lazy=True)  # Runs faster since sound files are not loaded
+Files to Clips: 100%|██████████| 920/920 [00:06<00:00, 148.91it/s]
+100%|██████████| 920/920 [00:00<00:00, 543104.81it/s]
 ```
 
 All metada about clips are still accesible
