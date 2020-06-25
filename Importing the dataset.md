@@ -75,6 +75,8 @@ Example for loading all files into the memory using `import_all_files()` functio
 ```python
 directory = "C:\\Users\\Serhat\\OneDrive - Georgia Institute of Technology\\Classes\\CS 7641\\project\\110374_267422_bundle_archive\\Respiratory_Sound_Database\\Respiratory_Sound_Database\\audio_and_txt_files"
 clips = import_all_files(directory) # flat array containing all clips
+Files to Clips: 100%|██████████| 920/920 [01:40<00:00,  9.15it/s]
+100%|██████████| 920/920 [00:00<00:00, 592743.42it/s]
 ```
 
 Each member of the `clips` array will be a `Clip`
@@ -126,8 +128,9 @@ As it can be seen from the examples, there might be cases where only a small gro
 
 ```python
 directory = "C:\\Users\\Serhat\\OneDrive - Georgia Institute of Technology\\Classes\\CS 7641\\project\\110374_267422_bundle_archive\\Respiratory_Sound_Database\\Respiratory_Sound_Database\\audio_and_txt_files"
-clips = import_all_files(directory, lazy=True) 
-# Runs faster since sound files are not loaded
+clips = import_all_files(directory, lazy=True)  # Runs faster since sound files are not loaded
+Files to Clips: 100%|██████████| 920/920 [00:06<00:00, 148.91it/s]
+100%|██████████| 920/920 [00:00<00:00, 543104.81it/s]
 ```
 
 All metada about clips are still accesible
