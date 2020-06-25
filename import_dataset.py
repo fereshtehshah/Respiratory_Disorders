@@ -121,5 +121,10 @@ def import_all_files(directory, sr=None, lazy=False):
     filenames = [f.split(".")[0] for f in listdir(directory)
                  if isfile(join(directory, f)) and f.split(".")[1] == "wav"]
 
-    clips = [Clip.generate_from_file(join(directory,f), sr=sr, lazy=lazy) for f in tqdm(filenames)]
+    # This produces a list of lists of clips
+    clips = [Clip.generate_from_file(join(directory,f), sr=sr, lazy=lazy) for f in tqdm(filenames,"Files to Clips")]
+    
+    # This flattens it into a single list of clips
+    clips = [item for sublist in tqdm(clips) for item in sublist]
+    
     return clips
