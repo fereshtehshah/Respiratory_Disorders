@@ -9,7 +9,7 @@ from import_dataset import import_all_files
 from group_data import get_data
 import numpy as np
 
-directory = "D:\Documents\GitHub\ML_Prj\data"
+directory = "D:\\Google Drive\\Programs\\Jupyter\\Machine Learning\\project\\data\\audio_and_txt_files"
 
 # Get clips
 clips = import_all_files(directory)
@@ -72,4 +72,4 @@ print("Class check - norm: ", np.sum(count_r_T[0]) == total_normal)
 print("Class check - crac: ", np.sum(count_r_T[1]) == total_crackle)
 print("Class check - whee: ", np.sum(count_r_T[2]) == total_wheeze)
 print("Class check - both: ", np.sum(count_r_T[3]) == total_both)
-print("Total check:        ", total_clips = np.sum(count_r))
+print("Total check:        ", total_clips == np.sum(count_r))
