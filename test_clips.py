@@ -8,6 +8,7 @@ Created on Thu Jun 25 20:57:18 2020
 #%% Import libraries
 from import_dataset import import_all_files
 from group_data import get_data
+import matplotlib.pyplot as plt
 import numpy as np
 
 directory = "D:\\Google Drive\\Programs\\Jupyter\\Machine Learning\\project\\data\\audio_and_txt_files"
@@ -23,7 +24,11 @@ for clip in clips:
         sample_rates[key] += 1
     else:
         sample_rates[key] = 0
-        
+
+print("Sample Rates:")
+print(sample_rates)
+print()
+
 #%% Analyze clip lengths
 times = []
 for clip in clips:
@@ -32,14 +37,17 @@ for clip in clips:
     t = n/sr
     
     times.append(t)
-
 times = np.array(times)
-n = np.argmax(times)
-print(clips[n].recording)
 
+
+# Randomly select 10 clips and print out their lengths
+key = np.random.randint(0,len(clips),10)
+for k in key:
+    print(clips[k].recording,times[k])
+
+#%% 
 plt.figure()
 plt.plot(times,'.')
 plt.xlabel("Clip Number")
 plt.ylabel("Time in Seconds")
 plt.title("Plot of Clip Lengths")
-    
