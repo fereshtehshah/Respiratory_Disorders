@@ -28,32 +28,24 @@ c = 0
 images = [[],[],[],[]]
 for group in data:
     for clip in tqdm(group, "Taking MFCC of clips in group " + str(c) + " of " + str(len(data))):
-        images[c].append(mfcc(y=clip.sound_data, sr=clip.sr))
-    c += 1
+        clip.mfcc = mfcc(y=clip.sound_data, sr=clip.sr)
 
 #%% Plot random mfccs from each group
 c = 0
-for group in images:
+for group in data:
     # Get images to plot
     key = np.random.randint(0,len(group),size=4)
+    arr = []
+    for n in range(4):
+        arr.append(group[key[n]])
     
     plt.figure(dpi=500)
 
-    plt.subplot(2,2,1)
-    librosa.display.specshow(group[key[0]], x_axis='time', y_axis='mel')
-    plt.title(data[c][key[0]].recording)
-    
-    plt.subplot(2,2,2)
-    librosa.display.specshow(group[key[1]], x_axis='time', y_axis='mel')
-    plt.title(data[c][key[1]].recording)
-    
-    plt.subplot(2,2,3)
-    librosa.display.specshow(group[key[2]], x_axis='time', y_axis='mel')
-    plt.title(data[c][key[2]].recording)
-    
-    plt.subplot(2,2,4)
-    librosa.display.specshow(group[key[3]], x_axis='time', y_axis='mel')
-    plt.title(data[c][key[3]].recording)
+    for n in range(4):
+        clip = group[key[n]]
+        plt.subplot(2,2,n+1)
+        librosa.display.specshow(clip.mfcc, x_axis='time', y_axis='mel', sr=clip.sr)
+        plt.title(clip.recording)
     
     plt.tight_layout(pad=3.0)
     
