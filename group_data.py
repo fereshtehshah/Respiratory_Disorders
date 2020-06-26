@@ -7,7 +7,8 @@ Created on Thu Jun 25 02:01:54 2020
 
 from tqdm import tqdm
 
-def get_data(clips, grouping="default", dtype="audio"):
+# This method gets data based on grouping and datatype.
+def get_data(clips, grouping="default", dtype="clip"):
     
     # Return values based on keyword arguments
     if grouping == "default":
