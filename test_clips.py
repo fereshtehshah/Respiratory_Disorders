@@ -24,7 +24,7 @@ for clip in clips:
     else:
         sample_rates[key] = 0
         
-#%% Plot clip lengths
+#%% Analyze clip lengths
 times = []
 for clip in clips:
     sr = clip.sr
@@ -34,6 +34,9 @@ for clip in clips:
     times.append(t)
 
 times = np.array(times)
+n = np.argmax(times)
+print(clips[n].recording)
+
 plt.figure()
 plt.plot(times,'.')
 plt.xlabel("Clip Number")
