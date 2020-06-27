@@ -38,6 +38,7 @@ class Recording:
 class Clip:
     
     mfcc = None
+    padded_sound = None
     
     def __init__(self, recording, patient_id, rec_i, chest_loc, acq_mode,
                  rec_equipment, crackle, wheeze, start_t=None, end_t=None):
@@ -129,7 +130,7 @@ def import_all_files(directory, sr=None, lazy=False):
              for f in tqdm(filenames, "Files to Clips")]
 
     # This flattens it into a single list of clips
-    clips = [item for sublist in tqdm(clips) for item in sublist]
+    clips = [item for sublist in clips for item in sublist]
 
     return clips
 

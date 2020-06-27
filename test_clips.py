@@ -14,7 +14,8 @@ import numpy as np
 directory = "D:\\Google Drive\\Programs\\Jupyter\\Machine Learning\\project\\data\\audio_and_txt_files"
 
 #%% Get clips
-clips = import_all_files(directory)
+sample_rate = 44100
+clips = import_all_files(directory,sample_rate)
 
 #%% Check sample rates
 sample_rates = {}
@@ -23,7 +24,7 @@ for clip in clips:
     if key in sample_rates:
         sample_rates[key] += 1
     else:
-        sample_rates[key] = 0
+        sample_rates[key] = 1
 
 print("Sample Rates:")
 print(sample_rates)
