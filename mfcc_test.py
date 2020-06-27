@@ -24,11 +24,12 @@ clips = import_all_files(directory)
 data = get_data(clips, grouping="default", dtype="clip")
 
 #%% Do mfcc on every clip
-c = 0
+c = 1
 images = [[],[],[],[]]
 for group in data:
     for clip in tqdm(group, "Taking MFCC of clips in group " + str(c) + " of " + str(len(data))):
         clip.mfcc = mfcc(y=clip.sound_data, sr=clip.sr)
+    c += 1
 
 #%% Plot random mfccs from each group
 c = 0
