@@ -62,9 +62,15 @@ for clip in tqdm(clips,"Generating data matrix"):
     index = index + 1
 
 #%% Applying PCA
-pca = decomposition.PCA(n_components=100) # change n_components
+pca = decomposition.PCA(n_components=0.99, svd_solver = 'full') 
 pca.fit(data_matrix)
 data_matrix_new = pca.transform(data_matrix)    
+
+# Plotting number of component vs explained variance
+plt.figure()
+plt.plot(np.cumsum(pca.explained_variance_ratio_))
+plt.xlabel('number of components')
+plt.ylabel('cumulative explained variance');
 
 # Scatter plot of the classes with most informative 3 principle components
 fig = plt.figure()
