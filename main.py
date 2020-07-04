@@ -14,12 +14,6 @@ from group_data import crop_clips
 from group_data import filter_clips
 from librosa.feature import mfcc
 from tqdm import tqdm
-<<<<<<< Updated upstream
-
-#%% Get clips (all at same sample rate for ease of use)
-sr = 44100
-directory = "D:\\Google Drive\\Programs\\Jupyter\\Machine Learning\\project\\data\\audio_and_txt_files"
-=======
 from sklearn import decomposition
 import matplotlib.pyplot as plt
 import random
@@ -30,7 +24,6 @@ sr = 44100
 directory = "C:\\Users\\Sukris\\Google Drive\\Programs\\Jupyter\\Machine Learning\\project\\data\\audio_and_txt_files"
 #directory = "D:\\Google Drive\\Programs\\Jupyter\\Machine Learning\\project\\data\\audio_and_txt_files"
 #directory = "/Users/elvanugurlu/OneDrive - Georgia Institute of Technology/Classes/CS ML/Project/110374_267422_bundle_archive/Respiratory_Sound_Database/Respiratory_Sound_Database/audio_and_txt_files/"
->>>>>>> Stashed changes
 clips = import_all_files(directory,sr)
 
 # %% Crop/filter clips
@@ -39,13 +32,6 @@ clips = crop_clips(clips,5,sr)
 
 #%% Do mfcc on cropped audio
 for clip in tqdm(clips,"Doing MFCC"):
-<<<<<<< Updated upstream
-    n = max_len - len(clip.sound_data)
-    clip.mfcc = mfcc(y=np.pad(clip.sound_data,(0,n)), sr=sr)
-
-#%% Separate data by class
-data = get_data(clips, grouping="default", dtype="clip")
-=======
     clip.mfcc = mfcc(y=clip.cropped_sound, sr=sr)
     clip.flattened_mfcc = clip.mfcc.flatten()
 
@@ -102,5 +88,3 @@ fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 ax.scatter(data_matrix_new[:, 0], data_matrix_new[:, 1], data_matrix_new[:, 2], c=labels[:,0])
 '''
-    
->>>>>>> Stashed changes
