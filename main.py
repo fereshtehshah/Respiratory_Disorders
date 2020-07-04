@@ -50,21 +50,21 @@ train_labels = []
 test_labels = []
 valid_labels = []
 
-for clips in train_split:
+for clips in tqdm(train_split, "Training split"):
     i = 0
     for clip in clips:
         train_data.append(clip.flattened_mfcc)
         train_labels.append(i)
         i += 1
         
-for clips in test_split:
+for clips in tqdm(test_split,"Testing split"):
     i = 0
     for clip in clips:
         test_data.append(clip.flattened_mfcc)
         test_labels.append(i)
         i += 1
 
-for clips in valid_split:
+for clips in tqdm(valid_split,"Validation split"):
     i = 0
     for clip in clips:
         valid_data.append(clip.flattened_mfcc)
