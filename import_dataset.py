@@ -38,7 +38,7 @@ class Recording:
 class Clip:
     
     mfcc = None
-    padded_sound = None
+    cropped_sound = None
     
     def __init__(self, recording, patient_id, rec_i, chest_loc, acq_mode,
                  rec_equipment, crackle, wheeze, start_t=None, end_t=None):
