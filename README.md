@@ -1,6 +1,5 @@
 # Respiratory Sound Classification
 
-This file contains documentation of the code for importing the dataset into memory. The first part contains information about the file structure of the dataset, second section contains detailed descriptions of the functions and classes and third part contains examples for how to use it.
 
 # File Structure of the Dataset
 
