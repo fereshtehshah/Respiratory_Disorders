@@ -1,9 +1,11 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jun 26 18:00:15 2020
+Created on Tue Jul  7 23:12:27 2020
 
-@author: sukris
+@author: elvanugurlu
 """
+
 
 #%% Import libraries
 import numpy as np
@@ -22,6 +24,17 @@ from sklearn.model_selection import cross_val_score, GridSearchCV, RandomizedSea
 from sklearn.svm import SVC
 from sklearn.metrics import confusion_matrix,classification_report
 from sklearn import preprocessing
+
+
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.layers import Flatten
+from keras.layers import Dropout
+from keras.layers.convolutional import Conv1D
+from keras.layers.convolutional import MaxPooling1D
+from keras.utils import to_categorical
+from keras.callbacks import History 
+from keras.callbacks import EarlyStopping
 
 #%% Get clips (all at same sample rate for ease of use)
 sr = 44100
@@ -46,7 +59,7 @@ data = get_data(clips, grouping="default", dtype="clip")
 #%% Split data into training, testing, and validation sets/labels
 for d in data:
     random.shuffle(d)
-train_split, test_split, valid_split = split_data(data,train=0.8,test=0.2,valid=0.0)
+train_split, test_split, valid_split = split_data(data,train=0.7,test=0.2,valid=0.1)
 
 train_data = []
 test_data = []
@@ -78,15 +91,16 @@ for clips in tqdm(valid_split,"Validation split"):
 #%% Scaling the input to standardize features by removing the mean and scaling to unit variance
 scaler = preprocessing.StandardScaler().fit(train_data)
 train_data = scaler.transform(train_data)
+valid_data=scaler.transform(valid_data)
 test_data=scaler.transform(test_data)
 
 #%% Applying PCA to reduce dimension while still keeping 99% of the original variance
-pca = decomposition.PCA(n_components=0.99, svd_solver = 'full') 
-pca.fit(train_data)
-train_data = pca.transform(train_data)   
-test_data = pca.transform(test_data)
+#pca = decomposition.PCA(n_components=0.99, svd_solver = 'full') 
+#pca.fit(train_data)
+#train_data = pca.transform(train_data)   
+#valid_data = pca.transform(valid_data) 
+#test_data = pca.transform(test_data)
     
-
 #%% Plots for visualization 
 # # Plotting number of component vs explained variance
 # plt.figure()
@@ -99,29 +113,56 @@ test_data = pca.transform(test_data)
 # ax = fig.add_subplot(111, projection='3d')
 # ax.scatter(train_data[:, 0], train_data[:, 1], train_data[:, 2], c=train_labels[:,0])
 
-#%% Tuning SVM parameters with grid search
-#params_grid = [{'kernel': ['linear'], 'C': [1, 10, 100, 1000]}]
-params_grid = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],
-                     'C': [1, 10, 100, 1000]},
-                    {'kernel': ['linear'], 'C': [1, 10, 100, 1000]}]
-encoder = preprocessing.LabelEncoder()
-encoder.fit(train_labels)
-Y_train = encoder.transform(train_labels)
-#svm_model = GridSearchCV(SVC(probability=False), params_grid, cv=5, n_jobs=-1, refit = True, verbose = 3) # n_jobs=-1 makes sure you use all available cores
-svm_model = RandomizedSearchCV(SVC(probability=False), params_grid, n_iter=10, cv=5, n_jobs=-1, refit = True, verbose = 10)
-print("SVM started")
-svm_model.fit(train_data, Y_train)
-print("SVM finished")
+#%% One-hot encoding of the labels
+train_labels = to_categorical(train_labels)
+valid_labels = to_categorical(valid_labels)
+test_labels = to_categorical(test_labels)
 
-#%% Choosing the best model and testing
-final_model = svm_model.best_estimator_
-Y_pred = final_model.predict(test_data)
-#print(Y_pred)
-Y_pred_label = list(encoder.inverse_transform(Y_pred))
-#print(Y_pred_label)
-print(confusion_matrix(test_labels,Y_pred_label))
-print("\n")
-print(classification_report(test_labels,Y_pred_label))
-#%%
+train_data = train_data.reshape(train_data.shape[0],train_data.shape[1],1)
+valid_data = valid_data.reshape(valid_data.shape[0],valid_data.shape[1],1)
+test_data =test_data.reshape(test_data.shape[0],test_data.shape[1],1)
+
+# fit and evaluate a model
+def evaluate_model(trainX, trainy, testX, testy, validX, validy):
+	#history = History()
+	es = EarlyStopping(monitor='val_accuracy', mode='max', verbose=1)
+	verbose, epochs, batch_size = 10, 50, 32
+	n_timesteps, n_features, n_outputs = trainX.shape[1], trainX.shape[2] , trainy.shape[1]
+	model = Sequential()
+	model.add(Conv1D(filters=128, kernel_size=5, activation='relu', input_shape=(n_timesteps,n_features)))
+	model.add(Conv1D(filters=64, kernel_size=5, activation='relu'))
+	model.add(Dropout(0.5))
+	model.add(MaxPooling1D(pool_size=2))
+	model.add(Flatten())
+	model.add(Dense(100, activation='relu'))
+	model.add(Dense(n_outputs, activation='softmax'))
+	model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+	# fit network
+	#hist=model.fit(trainX, trainy, epochs=epochs, batch_size=batch_size, callbacks=[history], validation_split = 0.1)
+	hist=model.fit(trainX, trainy, epochs=epochs, batch_size=batch_size, callbacks=[es], validation_data=(validX, validy))
+	# evaluate model
+	_, accuracy = model.evaluate(testX, testy, batch_size=batch_size, verbose=10)
+	return accuracy
 
 
+# summarize scores
+def summarize_results(scores):
+	print(scores)
+	m, s = np.mean(scores), np.std(scores)
+	print('Accuracy: %.3f%% (+/-%.3f)' % (m, s))
+ 
+# run an experiment
+def run_experiment( trainX, trainy, testX, testy,validX, validy, repeats=10):
+
+	# repeat experiment
+	scores = list()
+	for r in range(repeats):
+		score = evaluate_model(trainX, trainy, testX, testy, validX, validy)
+		score = score * 100.0
+		print('>#%d: %.3f' % (r+1, score))
+		scores.append(score)
+	# summarize results
+	summarize_results(scores)
+ 
+# run the experiment
+run_experiment( train_data ,train_labels, test_data,test_labels ,valid_data, valid_labels, repeats=10)
