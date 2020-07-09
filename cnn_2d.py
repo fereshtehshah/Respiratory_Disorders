@@ -216,7 +216,7 @@ def evaluate_2d_cnn_model(train_data ,train_labels, test_data,test_labels ,valid
     plt.title('Training and validation loss')
     plt.legend()
     plt.show()
-    return acc
+    return scores
 
 
  
