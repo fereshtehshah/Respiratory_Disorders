@@ -1,4 +1,7 @@
-# Respiratory Sound Classification
+theme: Cayman
+
+
+# Detecting Respiratory Disorders
 
 
 # File Structure of the Dataset
