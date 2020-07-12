@@ -1,4 +1,4 @@
-theme: Cayman
+
 
 
 # Detecting Respiratory Disorders
