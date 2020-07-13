@@ -31,7 +31,13 @@ A sample output from MFCC content of clips containing different adventitious sou
 
 **FIGURE**
 
-### Dimension Reduction (Applying PCA)
+
+# Classification Methods
+
+## Principal Component Analysis (PCA) and Support Vector Machines (SVM) in Pipeline
+As for the first classification method of our project, we combine an unsupervised learning method, PCA, with a supervised learning method, SVM. The main reason behind including PCA before SVM is to reduce the dimensionality of the dataset and hence increase the learning rate. The details for these methods are explained next.
+
+###  Principal Component Analysis (PCA) for Dimensionality Reduction 
 
 The MFCC-based features exist in a 2-dimensional space where the first and second dimensions represent the time and frequency information, respectively. Hence, the <img src="https://render.githubusercontent.com/render/math?math=i^{th}">  input data <img src="https://render.githubusercontent.com/render/math?math=\mathbf{x}_i \in \mathbb{R}^{TxD}"> where T is the number of time-windows and D is the number of frequency bins. As can be seen in the figures above, the features are sparsely distributed and most of these features show similar charachteristics across different classes. This implies that the dataset contains significant amount of redundant features. In an effort to reduce the dimensionality of the dataset and hence increase the learning rate while keeping the variation within the dataset, we propose to utilize principal component analysis (PCA).
 
@@ -46,10 +52,8 @@ To give a perspective of the dimensions, when the maximum length of the recordin
   <div style='width: 1000px; text-align: center;'>Fig.1: Explained variance for increasing number of kept principal components.</div>
 </a>
 
-
-# Classification Methods
-## Support Vector Machines (SVM)
-## Concurrent Neural Networks (CNN)
+### Support Vector Machines (SVM)
+## Convolutional Neural Networks (CNN)
 
 
 # Evaluation & Results
