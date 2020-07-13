@@ -115,4 +115,8 @@ Another aspect of the data that could have reduced our accuracy was how the data
 
 # Discussion & Conclusion
 
+For the CNN structure, the accuracy results turned out to be comparable for different kernel sizes (3x3, 5x5, and 11x11), therefore, only the best performing kernel size (15x15) have been reported. **-->Can also be mentioned somewhere in the results**
+
+In addition to the 2 dimensional CNN, we tried to use 1 dimensional CNN. For that, we used two different input types: 1) Flattened MFCC coefficients of size 8620x1, 2) Features obtained after applying PCA (1916x1). Training the former network took significantly long amount of time (300 s/epoch) since it required training 71 million parameters. The highest accuracy achieved with such a structure was 63%. On the other hand, training the second network took considerably less time (70 s/epoch) at the expense of significantly lower accuracy (54%). These results indicate that 2 dimensional CNN structure outperforms 1 dimensional CNN structures for this dataset. **-->Can also be moved to the results**
+
 # References
