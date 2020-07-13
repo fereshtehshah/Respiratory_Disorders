@@ -31,6 +31,11 @@ A sample output from MFCC content of clips containing different adventitious sou
 
 **FIGURE**
 
+### Dataset Partitioning
+Since the dataset does not include seperate recordings for training and testing, we randomly partition the dataset into training (80%) and testing (20%) by maintaining the class distribution for both sets. For the first classification method (SVM), we perform a 5-fold cross validation to pick the hyperparameters, therefore, no seperate validation dataset is required. As for the second classification method (CNN), we split the training dataset so that 70% of the original dataset is used for training and 10% is used for validation. Fig. **??** illustrates the class distribution for CNN system.
+![](images/classDistribution.png)
+-> Figure ??. Distribution of the dataset to be used for CNN-based system <-
+
 
 # Classification Methods
 
