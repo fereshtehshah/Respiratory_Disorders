@@ -29,9 +29,9 @@
 
 Our best SVM model achieved an accuracy of 69%. Interestingly, the recall percentages correlate well with the distribution of classes in our data. When looking at the unbalanced dataset, as less training data was available in each class, the corresponding recall values also decreased. Figure x is the confusion matrix with percent recall values, and figure x illustrates this by normalizing the number of clips in each class and the recall of each class.
 
-![testImage.png](testImage.png "testImage.png")
-
 ![images/confusionMatrix_normalized_svm_model.png](images/confusionMatrix_normalized_svm_model.png "images/confusionMatrix_normalized_svm_model.png")
+
+![svm_distribution_recall_comparison.png](images/svm_distribution_recall_comparison.png "svm_distribution_recall_comparison.png")
 
 The unbalanced data could be the reason for our relatively low accuracy of 69%. The healthy class, which had the most data available (3642 clips) achieved a recall of 82%, while the both class, with the least data available (506 clips) achieved a recall of 37%.
 
