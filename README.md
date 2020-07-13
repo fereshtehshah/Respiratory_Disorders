@@ -45,26 +45,32 @@ PCA method was used in order to reduce the dimension of the flattened MFCC featu
 # Evaluation & Results
 ## SVM Results
 
-Our best SVM model achieved an accuracy of 69%. Interestingly, the recall percentages correlate well with the distribution of classes in our data. When looking at the unbalanced dataset, as less training data was available in each class, the corresponding recall values also decreased. Figure x is the confusion matrix with percent recall values, and figure x illustrates this by normalizing the number of clips in each class and the recall of each class.
+Our best SVM model achieved an accuracy of 69%. Interestingly, the recall percentages correlate well with the distribution of classes in our data. When looking at the unbalanced dataset, as less training data was available in each class, the corresponding recall values also decreased. Figure 0 is the confusion matrix with percent recall values, and figure 1 illustrates this by normalizing the number of clips in each class and the recall of each class.
 
 ![](images/eval_fig0.png)
+-> Figure 0. Normalized confusion matrix for SVM model <-
 
 ![](images/eval_fig1.png)
+-> Figure 1. Comparison of normalized class distribution and normalized recall for each class in SVM model <-
 
 The unbalanced data could be the reason for our relatively low accuracy of 69%. The healthy class, which had the most data available (3642 clips) achieved a recall of 82%, while the both class, with the least data available (506 clips) achieved a recall of 37%.
 
 ## CNN Results
 
-Our best CNN model achieved an accuracy of 71%. The normalized confusion matrix is shown in Figure x, and a graph of the training and validation accuracy is shown in Figure x.
+Our best CNN model achieved an accuracy of 71%. The normalized confusion matrix is shown in Figure 2, and a graph of the training and validation accuracy is shown in Figure 3.
 
 ![](images/eval_fig2.png)
+-> Figure 2. Normalized confusion matrix for CNN model <-
 
 ![](images/eval_fig3.png)
+-> Figure 3. Training and validation accuracy for CNN model across 30 epochs <-
 
-As seen in Figure x, overfitting starts to happen at around the 20th epoch. Although more training at each epoch does result in a higher validation accuracy, the accuracy gain is much less when compared to the training accuracy.
-Like the SVM model, the recall percentages for the CNN model also correlate well with the distribution of classes in our data. The graph of the normalized class distribution and recall comparison is shown in Figure x.
+As seen in Figure 3, overfitting starts to happen at around the 20th epoch. Although more training at each epoch does result in a higher validation accuracy, the accuracy gain is much less when compared to the training accuracy.
+
+Like the SVM model, the recall percentages for the CNN model also correlate well with the distribution of classes in our data. The graph of the normalized class distribution and recall comparison is shown in Figure 4.
 
 ![](images/eval_fig4.png)
+-> Figure 4. Comparison of normalized class distribution and normalized recall for each class in CNN model <-
 
 ## Dataset Evaluation
 The dataset itself was a difficult dataset to work with. Aside from the unbalanced part of it that was discussed previously, there were various other features that could affect our accuracies.
