@@ -53,6 +53,18 @@ To give a perspective of the dimensions, when the maximum length of the recordin
 ### Support Vector Machines (SVM)
 ## Convolutional Neural Networks (CNN)
 
+As a second classification approach, we propose to use a Convolutional Network Network based system. The Convolutional Network Network (CNN) is a neural network classification technique that is commonly used in image classification. As opposed to the traditional neural networks, where each input feature is associated with seperate parameters, in CNN, parameters are shared among the features. This allows the network for learning local features. By this means, CNN automatically learns the important features without requiring extra feature extraction. 
+CNN-based architectures constructs a deep layered structure through convolutional kernels, which are learned from the data to extract complex features. Furthermore, CNN is computationally efficient. Convolution and pooling operations allow for parameter sharing and efficient computation.
+
+In our project, the MFCC-based features are 2-dimensional. Therefore, they can be treated as images and the assignment can be translated into an image classification task. After experimenting with commonly used CNN structures such as AlexNet and VGGNet, we designed our own CNN-based neural network structure as shown in Fig. **??**.
+
+Our network includes three convolutional layers (each followed by a max-pooling layer) and four fully connected layers as well as the output layer. The convolution operations are performed with a kernel size of 15x15 and stride of 1. The fully connected layers have 6784, 2048, 1024 and 128 neurons, respectively. The activation function for all convolutional and fully connected layers is Rectified Linear Unit (ReLU). The output layer, consisting of 4 nodes, implements a softmax activation function. The max-pooling operations are performed with a kernel of size 2x2 and stride 1.
+
+![](images/cnn_2d_arch.png)
+-> Figure ??. Architecture of the CNN-based neural network. <-
+
+The proposed neural network system above consists of over 16 million parameters to be trained. Considering the dataset size, this is a significantly large number of parameters. To increase the training speed, we use Adam optimizer. We specify our loss function as categorical cross entropy <img src="https://render.githubusercontent.com/render/math?math=L(y,\hat{y})=-\sum_{i=1}^{C} y_i\log(f(\hat{y}_i))"> with <img src="https://render.githubusercontent.com/render/math?math=f(\hat{y}_i)=\frac{e^{\hat{y}_i}}{\sum_{j=1}^{C}e^{\hat{y}_j}}"> where the number of classes is C = 4 in our case. Then, we train our algorithm and evaluate it on the validation set to choose the the number of epochs. 
+
 
 # Evaluation & Results
 ## SVM Results
