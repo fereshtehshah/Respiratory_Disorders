@@ -31,7 +31,7 @@ Our best SVM model achieved an accuracy of 69%. Interestingly, the recall percen
 
 ![testImage.png](testImage.png "testImage.png")
 
-![images\confusionMatrix_normalized_svm_model.png](confusionMatrix_normalized_svm_model.png "confusionMatrix_normalized_svm_model.png")
+![.images/confusionMatrix_normalized_svm_model.png](.images/confusionMatrix_normalized_svm_model.png ".images/confusionMatrix_normalized_svm_model.png")
 
 The unbalanced data could be the reason for our relatively low accuracy of 69%. The healthy class, which had the most data available (3642 clips) achieved a recall of 82%, while the both class, with the least data available (506 clips) achieved a recall of 37%.
 
