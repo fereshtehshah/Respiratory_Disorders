@@ -37,9 +37,6 @@ PCA method was used in order to reduce the dimension of the flattened MFCC featu
 
 **FIGURE**
 
-## Feature Extraction (Using Signal Processing)
-### MFCC Method
-
 # Classification Methods
 ## Support Vector Machines (SVM)
 ## Concurrent Neural Networks (CNN)
