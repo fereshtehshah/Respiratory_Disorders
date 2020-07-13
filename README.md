@@ -10,11 +10,32 @@
 
 
 # Data
-## Data Processing Pipeline & Feature Extraction
-## Preprocessing
-### Noise Reduction & Applying Audio Filtering Techniques
 
-## Dimension Reduction (Applying PCA)
+Data is taken from the _Respiratory Sound Database_ created by two research teams in Portugal and Greece. It consists of 920 recordings. Each recording is varying in length. A scatter plot of the length of recordings is given in **FIGURE**. Recordings were taken from 126 patients and each recording is annotated. Annotations are comprised of beginning and end times of each respiratory cycle and whether the cycle contains crackle and/or wheeze. Crackles and wheezes are called adventitious sounds and presence of them are used by health care professionals when diagnosing respiratory diseases. Number of respiratory cycles containing each adventitious cycle is shown in **PLOT**. 
+
+![](images/plt_clip_lengths.png)
+
+![](images/plt_class_dist.png)
+
+
+
+## Preprocessing
+
+Preprocessing of the data starts from importing the sound files, resampling and cropping them. Since the recordings were taken by two different research teams with different recording devices, there are 3 different sampling rates (44100 Hz, 10000 Hz and 4000 Hz). All recordings were resampled to 44100 Hz and all clips are made 5 seconds long by zero padding shorter clips and cropping the longer ones.  `librosa` library was used in this project for reading the audio data and extracting features.
+
+### Feature Extraction (MFCC)
+
+Mel Frequency Cepstrum Coefficients were used as features of the sound clips. MFCCs are widely used in speech recognition systems. They are also being used extensively in previous work on detection of adventitious respiratory sounds, they provide a measure of short term power spectrum of time domain signals. Both the frequency and time content are important to distinguish between different adventitious sounds, since different adventitious sounds can exist in a single clip at different time periods and they differ in duration. Therefore, MFCC is helpful in capturing the change in frequency content of a signal over time. Frequencies are placed on a mel scale, which is a nonlinear scale of frequencies whose distances are percieved to be equal by the human auditory system. Output of MFCC is a 2 dimensional feature vector (time and frequency), which was then flattened into a one dimensional array before further processing.  
+
+A sample output from MFCC content of clips containing different adventitious sounds is given below.
+
+**FIGURE**
+
+### Dimension Reduction (Applying PCA)
+
+PCA method was used in order to reduce the dimension of the flattened MFCC feature vectors. Plot given below shows the relationship between the number of principal components and retained variance.
+
+**FIGURE**
 
 ## Feature Extraction (Using Signal Processing)
 ### MFCC Method
