@@ -11,7 +11,7 @@
 
 # Data
 
-Data is taken from the _Respiratory Sound Database_ created by two research teams in Portugal and Greece. It consists of 920 recordings. Each recording is varying in length. A scatter plot of the length of recordings is given in **FIGURE**. Recordings were taken from 126 patients and each recording is annotated. Annotations are comprised of beginning and end times of each respiratory cycle and whether the cycle contains crackle and/or wheeze. Crackles and wheezes are called adventitious sounds and presence of them are used by health care professionals when diagnosing respiratory diseases. Number of respiratory cycles containing each adventitious cycle is shown in **PLOT**. 
+Data is taken from the _Respiratory Sound Database_ created by two research teams in Portugal and Greece. It consists of 920 recordings. Each recording is varying in length. A scatter plot of the length of recordings is given in **FIGURE**. Recordings were taken from 126 patients and each recording is annotated. Annotations are comprised of beginning and end times of each respiratory cycle and whether the cycle contains crackle and/or wheeze. Crackles and wheezes are called adventitious sounds and presence of them are used by health care professionals when diagnosing respiratory diseases. Number of respiratory cycles containing each adventitious cycle is shown in **PLOT**.
 
 ![](images/plt_clip_lengths.png)
 
@@ -47,9 +47,9 @@ PCA method was used in order to reduce the dimension of the flattened MFCC featu
 
 Our best SVM model achieved an accuracy of 69%. Interestingly, the recall percentages correlate well with the distribution of classes in our data. When looking at the unbalanced dataset, as less training data was available in each class, the corresponding recall values also decreased. Figure x is the confusion matrix with percent recall values, and figure x illustrates this by normalizing the number of clips in each class and the recall of each class.
 
-![images/confusionMatrix_normalized_svm_model.png](images/confusionMatrix_normalized_svm_model.png "images/confusionMatrix_normalized_svm_model.png")
+![](images/eval_fig0.png)
 
-![svm_distribution_recall_comparison.png](images/svm_distribution_recall_comparison.png "svm_distribution_recall_comparison.png")
+![](images/eval_fig1.png)
 
 The unbalanced data could be the reason for our relatively low accuracy of 69%. The healthy class, which had the most data available (3642 clips) achieved a recall of 82%, while the both class, with the least data available (506 clips) achieved a recall of 37%.
 
@@ -57,8 +57,14 @@ The unbalanced data could be the reason for our relatively low accuracy of 69%. 
 
 Our best CNN model achieved an accuracy of 71%. The normalized confusion matrix is shown in Figure x, and a graph of the training and validation accuracy is shown in Figure x.
 
+![](images/eval_fig2.png)
+
+![](images/eval_fig3.png)
+
 As seen in Figure x, overfitting starts to happen at around the 20th epoch. Although more training at each epoch does result in a higher validation accuracy, the accuracy gain is much less when compared to the training accuracy.
 Like the SVM model, the recall percentages for the CNN model also correlate well with the distribution of classes in our data. The graph of the normalized class distribution and recall comparison is shown in Figure x.
+
+![](images/eval_fig4.png)
 
 ## Dataset
 The dataset itself was a difficult dataset to work with. Aside from the unbalanced part of it that was discussed previously, there were various other features that could affect our accuracies.
