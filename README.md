@@ -46,13 +46,9 @@ PCA is a commonly used unsupervised learning technique in machine learning that 
 Our MFCC-based features lie in a 2-dimensional space. To be able to utilize the conventional PCA scheme, we flatten the features so that the features are represented as a vector. Then, we can apply the common PCA procedure. However, PCA is not agnostic to different scalings of the features. Therefore, we standardize the data so that all features are similarly scaled.
 
 To give a perspective of the dimensions, when the maximum length of the recording are limited to 5 seconds, the resulting MFCC features have the dimension 20 x 431. Therefore, we have 8620 features in total. As explained above, the values for most of these features are the same across the different classes and redundant. In the figure below, how the explained cumulative variance changes for increasing number of components is presented. We note that we still keep the 99% of the original variance when the dimensionality is reduced to 1916. This reduction is very significant because it becomes useful to increase the learning rate in the next step.
+![](images/PCA_explained_varience.png)
+-> Figure ??. Explained variance for increasing number of kept principal components <-
 
-<img src="images/PCA_explained_varience.png" alt="drawing" style="width:20px;"/>
-
-<a style='text-decoration: none; font-weight: bold; color: black;'>
-  <img src="images/PCA_explained_varience.png" style="width:10px"/>
-  <div style='width: 1000px; text-align: center;'>Fig.1: Explained variance for increasing number of kept principal components.</div>
-</a>
 
 ### Support Vector Machines (SVM)
 ## Convolutional Neural Networks (CNN)
