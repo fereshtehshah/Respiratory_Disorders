@@ -43,7 +43,7 @@ PCA method was used in order to reduce the dimension of the flattened MFCC featu
 
 
 # Evaluation & Results
-## SVM
+## SVM Results
 
 Our best SVM model achieved an accuracy of 69%. Interestingly, the recall percentages correlate well with the distribution of classes in our data. When looking at the unbalanced dataset, as less training data was available in each class, the corresponding recall values also decreased. Figure x is the confusion matrix with percent recall values, and figure x illustrates this by normalizing the number of clips in each class and the recall of each class.
 
@@ -53,7 +53,7 @@ Our best SVM model achieved an accuracy of 69%. Interestingly, the recall percen
 
 The unbalanced data could be the reason for our relatively low accuracy of 69%. The healthy class, which had the most data available (3642 clips) achieved a recall of 82%, while the both class, with the least data available (506 clips) achieved a recall of 37%.
 
-## Neural Network
+## CNN Results
 
 Our best CNN model achieved an accuracy of 71%. The normalized confusion matrix is shown in Figure x, and a graph of the training and validation accuracy is shown in Figure x.
 
@@ -66,7 +66,7 @@ Like the SVM model, the recall percentages for the CNN model also correlate well
 
 ![](images/eval_fig4.png)
 
-## Dataset
+## Dataset Evaluation
 The dataset itself was a difficult dataset to work with. Aside from the unbalanced part of it that was discussed previously, there were various other features that could affect our accuracies.
 
 One aspect of the data that likely reduced our accuracy was the format of the data itself. All the clips were of different lengths, ranging from 0.2 to 16.2 seconds. The clips were also not sampled at the same sampling rate. This required us to augment the data through zero-padding, cropping, filtering, and up-sampling or down-sampling, which removed from the truth of the actual data and could cause problems in the training process.
