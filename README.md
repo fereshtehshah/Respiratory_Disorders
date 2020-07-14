@@ -23,8 +23,8 @@ Vesicular or normal lung sounds are usually soft and low-pitched and heard durin
 <p align="center">
 <img src="images/Pic_Normal.png" width="750">
 <br>
-Figure 1:
-a) Typical waveform from normal breath - (dB/milisecond). It shows a typical respiratory cycle with time duration about 35 milisecond. 
+Figure 1: <br>
+a) Typical waveform from normal breath - (dB/milisecond). It shows a typical respiratory cycle with time duration about 35 milisecond. <br>
 b & c) Spectral Pitch & Frequency spectrogram for a normal breath (Hz/milisecond).
 </p>
 
@@ -34,20 +34,20 @@ Wheezes are continuous, high-pitched adventitious lung sounds with the typical f
 <p align="center">
 <img src="images/Pic_Wheeze.png" width="750">
 <br>
-Figure 2:
-a) Typical waveform from wheeze- (dB/milisecond). It shows a respiratory cycle with time duration about 40 milisecond. 
+Figure 2: <br>
+a) Typical waveform from wheeze- (dB/milisecond). It shows a respiratory cycle with time duration about 40 milisecond. <br>
 b & c) Spectral Pitch & Frequency spectrogram for a wheeze sound (Hz/milisecond).
 
 </p>
 
-##### Crackles
+#### Crackles
 Crackles are discontinuous, short, explosive, lung adventitious sounds in the lung fields that have fluid in the small airways. Crackles can occur on both inspiration and expiration but are more common during the inspiratory phase. There are two types of fine and coarse crackles. The fine crackles are about 650 Hz and at least minimum time duration about 5 milisecond. While the frequency of the coarse crackles is about 350 Hz and the minimum duration about 14 miliseconds. Such frequency and time ranges shows that difference between the two is that fine crackles have a higher frequency and a shorter duration and are caused by a sudden opening of a narrowed or closed airway. The sound of fine crackles can be compared to that of salt heated on a frying pan. Coarse crackles, on the other hand, are louder, lower in pitch and last longer. They are caused by secretions in the airways. The sound of coarse crackles is like pouring water out of a bottle. Crackles are often associated with lung inflammation or infection like Cronic Obstructive Pulminary Disease (COPD), chronic bronchitis, pneumonia, and pulmonary fibrosis.
 
 <p align="center">
 <img src="images/Pic_Crackle.png" width="750">
 <br>
-Figure 3:
-a) Typical waveform from crackle- (dB/milisecond). It shows a respiratory cycle with time duration about 50 milisecond. 
+Figure 3: <br>
+a) Typical waveform from crackle- (dB/milisecond). It shows a respiratory cycle with time duration about 50 milisecond. <br>
 b & c) Spectral Pitch & Frequency spectrogram for a crackle sound (Hz/milisecond).
 
 </p>
