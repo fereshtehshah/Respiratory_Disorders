@@ -17,11 +17,11 @@ In those COVID-19 cases, in which the infection has led to acute respiratory dis
 
 ### Respiratory Sounds
 
-Signal Waveform ...
+Signal Waveform ... <br />
 
-Spectral Pitch Display ...
+Spectral Pitch Display ...<br />
 
-Spectrum frequency display ...
+Spectrum frequency display ...<br />
 
 #### Normal Lung Sounds
 
@@ -30,7 +30,7 @@ Vesicular or normal lung sounds are usually soft and low-pitched and heard durin
 <p align="center">
 <img src="images/Pic_Normal.png" width="750">
 <br>
-Figure **XX1 - ** Vesicular or normal lung sounds ...
+Figure **XX1** Vesicular or normal lung sounds ...
 </p>
 
 #### Abnormal Lung Sounds
@@ -43,7 +43,7 @@ Wheezes are continuous, high-pitched adventitious lung sounds with a musical qua
 <p align="center">
 <img src="images/Pic_Wheeze.png" width="750">
 <br>
-Figure **XX1 - ** Wheezes ....</p>
+Figure **XX1** Wheezes ....</p>
 
 ##### Crackles
 Crackles are discontinuous, short, explosive, lung adventitious sounds in the lung fields that have fluid in the small airways. Crackles can occur on both inspiration and expiration but are more common during the inspiratory phase. There are two types of fine and coarse crackles.  The difference between the two is that fine crackles have a higher frequency and a shorter duration and are caused by a sudden opening of a narrowed or closed airway. The sound of fine crackles can be compared to that of salt heated on a frying pan. Coarse crackles, on the other hand, are louder, lower in pitch and last longer. They are caused by secretions in the airways. The sound of coarse crackles is like pouring water out of a bottle. Crackles are often associated with lung inflammation or infection. If they do not clear after a cough, this may indicate acute respiratory distress syndrome, or pulmonary fibrosis.
@@ -51,7 +51,7 @@ Crackles are discontinuous, short, explosive, lung adventitious sounds in the lu
 <p align="center">
 <img src="images/Pic_Crackle.png" width="750">
 <br>
-Figure **XX1 - ** Crackles ....
+Figure **XX1** Crackles ....
 </p>
 
 
