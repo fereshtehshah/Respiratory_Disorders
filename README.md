@@ -114,15 +114,15 @@ Figure 3. Training and validation accuracy for CNN model across 30 epochs
 <p align="center">
 <img src="images/eval_fig4.png" width="600">
 <br>
-Figure 3. Training and validation accuracy for CNN model across 30 epochs
+Figure 4. Training and validation loss for CNN model across 30 epochs
 </p>
 
-Like the SVM model, the recall percentages for the CNN model also correlate well with the distribution of classes in our data. The graph of the normalized class distribution and recall comparison is shown in Figure 4.
+Like the SVM model, the recall percentages for the CNN model also correlate well with the distribution of classes in our data. The graph of the normalized class distribution and recall comparison is shown in Figure 5.
 
 <p align="center">
 <img src="images/eval_fig5.png" width="600">
 <br>
-Figure 4. Comparison of normalized class distribution and normalized recall for each class in CNN model
+Figure 5. Comparison of normalized class distribution and normalized recall for each class in CNN model
 </p>
 
 ## Dataset Evaluation
