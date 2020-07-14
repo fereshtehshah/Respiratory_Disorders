@@ -143,13 +143,18 @@ One aspect of the data that likely reduced our accuracy was the format of the da
 
 Another aspect of the data that could have reduced our accuracy was how the data was gathered. Across all the clips, there were four different recording devices used, two different acquisition modes, and six different locations of the chest that were recorded. Our models did not account for any of these differences.
 
-
-
+Furthermore, considering the number of parameters to be trained (over 16 million) in the CNN implementation, the dataset size is very small (4827 total samples) and this restricts the learning capability of the network. 
 # Discussion & Conclusion
 
 For the CNN structure, the accuracy results turned out to be comparable for different kernel sizes (3x3, 5x5, and 11x11), therefore, we only report the results for the best performing kernel size (15x15). **-->Can also be mentioned somewhere in the results**
 
 In addition to the 2 dimensional CNN, we tried to use 1 dimensional CNN. For that, we used two different input types: 1) Flattened MFCC coefficients of size 8620x1, 2) Features obtained after applying PCA (1916x1). Training the former network took significantly long amount of time (300 s/epoch) since it required training 71 million parameters. The highest accuracy achieved with such a structure was 63%. On the other hand, training the second network took considerably less time (70 s/epoch) at the expense of significantly lower accuracy (54%). These results indicate that 2 dimensional CNN structure outperforms 1 dimensional CNN structures for this dataset. **-->Can also be moved to the results**
+
+Possible considerations to increase the performance of the system are listed as follows:
+* Using a larger dataset that has a balanced class distribution.
+* Utilizing other feature extraction methods such as short-time Fourier transform (STFT)
+* Applying advanced signal processing techniques to extract more informative and distinctive features from the recordings.
+* ??
 
 # References
 <a name="pca">[1]</a>: Wold, Svante, Kim Esbensen, and Paul Geladi. "Principal component analysis." Chemometrics and intelligent laboratory systems 2.1-3 (1987): 37-52.
