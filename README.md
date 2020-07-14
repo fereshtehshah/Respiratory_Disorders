@@ -108,6 +108,17 @@ Figure **XX2**. Explained variance for increasing number of kept principal compo
 </p>
 
 ### Support Vector Machines (SVM)
+As  the first supervised classification method, we trained Support Vector Machine (SVM) for four-class classification. SVMs rely on kernel methods to adapt to patterns of data, by nonlinearly mapping the data from original space into a higher dimensional space. A key initial step in SVM is normalizing the predictor (feature space) for SVM training.  As discussed earlier our SVM is fed by the output of the PCA. Thus, by removing the mean and scaling to unit variance, the input data is normalized  to standardize features. The second step is choosing kernels and regularization parameters. Although there are automated ways of doing so, we avoided such automation, to prevent any potential overfitting of the model. Since our features are nonlinearly distributed in feature space, we chose the Radial Basis Function (RBF) to enhance SVM flexibility and robustness to fit the given data distribution. Mixture of SVM and RBF requires an appropriate tuning of SVM hyperparameters.
+
+#### Parameters Tuning: 
+##### RBF Parameters : Gamma & C
+The SVM parameters are determined through maximization of a margin-based criterion. This criterion is approximately optimized through two sub problems. First is related to margin maximization in the input space, and the second is related to determination of the extent of sample spread in the feature space. Thus, here our hyperparameters for SVM are: first, the soft margin parameter C in input space which is obtained by an analytical formula in terms of xxxx, second, the RBF kernel Gamma parameter in the feature space. 
+###### Gamma: Gamma reshapes a decision boundary, by trying to assemble and cluster similar data points. 
+###### Soft margin parameter C: this parameter is called penalty parameter which controls the penalty of misclassification. 
+Optimal SVM-RBF Model Parameters
+
+We splitted data into training and testing partitions for cross validation.  In setting the fitness function, we calculated the root-mean-square deviation (RMSD) of the model over the test data. RMSD quantifies the difference between model predicted values and observed value. By minimizing the RMSD value, we optimized the values of parameters Gamma and C. Discussed approaches allow us to have more robustness after cross validation, more generalization across randomly split trst samples, and less bias between prediction and actual observations. The optimized Gamma is equal to xxx and C is xxx. 
+
 ## Convolutional Neural Networks (CNN)
 
 As the second classification approach, we propose to use a Convolutional Neural Network based system. The Convolutional Neural Network (CNN) is a neural network classification technique that is commonly used in image classification <sup>[2](#imagenet)</sup> <sup>[3](#vggnet)</sup>. As opposed to the traditional neural networks, where each input feature is associated with seperate parameters, in CNN, parameters are shared among the features. This allows the network for learning local features. By this means, CNN automatically learns the important features without requiring extra feature extraction.
