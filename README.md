@@ -32,10 +32,13 @@ A sample output from MFCC content of clips containing different adventitious sou
 **FIGURE**
 
 ### Dataset Partitioning
-Since the dataset does not include seperate recordings for training and testing, we randomly partition the dataset into training (80%) and testing (20%) by maintaining the class distribution for both sets. For the first classification method (SVM), we perform a 5-fold cross validation to pick the hyperparameters, therefore, no seperate validation dataset is required. As for the second classification method (CNN), we split the training dataset so that 70% of the original dataset is used for training and 10% is used for validation. Fig. **??** illustrates the class distribution for CNN system.
-![](images/classDistribution.png)
--> Figure ??. Distribution of the dataset to be used for CNN-based system <-
+Since the dataset does not include seperate recordings for training and testing, we randomly partition the dataset into training (80%) and testing (20%) by maintaining the class distribution for both sets. For the first classification method (SVM), we perform a 5-fold cross validation to pick the hyperparameters, therefore, no seperate validation dataset is required. As for the second classification method (CNN), we split the training dataset so that 70% of the original dataset is used for training and 10% is used for validation. Fig. **XX** illustrates the class distribution for CNN system.
 
+<p align="center">
+<img src="images/classDistribution.png" width="600">
+<br>
+Figure XX. Distribution of the dataset to be used for CNN-based system
+</p>
 
 # Classification Methods
 
@@ -51,9 +54,12 @@ PCA is a commonly used unsupervised learning technique in machine learning that 
 Our MFCC-based features lie in a 2-dimensional space. To be able to utilize the conventional PCA scheme, we flatten the features so that the features are represented as a vector. Then, we can apply the common PCA procedure. However, PCA is not agnostic to different scalings of the features. Therefore, we standardize the data so that all features are similarly scaled.
 
 To give a perspective of the dimensions, when the maximum length of the recording are limited to 5 seconds, the resulting MFCC features have the dimension 20 x 431. Therefore, we have 8620 features in total. As explained above, the values for most of these features are the same across the different classes and redundant. In the figure below, how the explained cumulative variance changes for increasing number of components is presented. We note that we still keep the 99% of the original variance when the dimensionality is reduced to 1916. This reduction is very significant because it becomes useful to increase the learning rate in the next step.
-![](images/PCA_explained_varience.png)
--> Figure ??. Explained variance for increasing number of kept principal components <-
 
+<p align="center">
+<img src="images/PCA_explained_varience.png" width="600">
+<br>
+Figure XX. Explained variance for increasing number of kept principal components
+</p>
 
 ### Support Vector Machines (SVM)
 ## Convolutional Neural Networks (CNN)
@@ -65,8 +71,12 @@ In our project, the MFCC-based features are 2-dimensional. Therefore, they can b
 
 Our network includes three convolutional layers (each followed by a max-pooling layer) and four fully connected layers as well as the output layer. The convolution operations are performed with a kernel size of 15x15 and stride of 1. The fully connected layers have 6784, 2048, 1024 and 128 neurons, respectively. The activation function for all convolutional and fully connected layers is Rectified Linear Unit (ReLU). The output layer, consisting of 4 nodes, implements a softmax activation function. The max-pooling operations are performed with a kernel of size 2x2 and stride 1.
 
-![](images/cnn_2d_arch.png)
--> Figure ??. Architecture of the CNN-based neural network. <-
+<p align="center">
+<img src="images/cnn_2d_arch.png" width="1000">
+<br>
+Figure XX. Architecture of the CNN-based neural network
+</p>
+
 
 The proposed neural network system above consists of over 16 million parameters to be trained. Considering the dataset size, this is a significantly large number of parameters. To increase the training speed, we use Adam optimizer. We specify our loss function as categorical cross entropy
 <img src="https://render.githubusercontent.com/render/math?math=L(y,\hat{y})=-\sum_{i=1}^{C} y_i\log(f(\hat{y}_i))"> with
