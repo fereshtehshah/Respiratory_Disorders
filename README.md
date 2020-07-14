@@ -78,9 +78,9 @@ Figure XX. Architecture of the CNN-based neural network
 </p>
 
 
-The proposed neural network system above consists of over 16 million parameters to be trained. Considering the dataset size, this is a significantly large number of parameters. To increase the training speed, we use Adam optimizer <sup>[4](#adam)</sup>. We specify our loss function as categorical cross entropy
-<img src="https://render.githubusercontent.com/render/math?math=L(y,\hat{y})=-\sum_{i=1}^{C} y_i\log(f(\hat{y}_i))"> with\
-<img src="https://render.githubusercontent.com/render/math?math=f(\hat{y}_i)=\frac{e^{\hat{y}_i}}{\sum_{j=1}^{C}e^{\hat{y}_j}}">,\
+The proposed neural network system above consists of over 16 million parameters to be trained. Considering the dataset size, this is a significantly large number of parameters. To increase the training speed, we use Adam optimizer <sup>[4](#adam)</sup>. We specify our loss function as categorical cross entropy\
+<center><img src="https://render.githubusercontent.com/render/math?math=L(y,\hat{y})=-\sum_{i=1}^{C} y_i\log(f(\hat{y}_i))"> with\</center>
+<center><img src="https://render.githubusercontent.com/render/math?math=f(\hat{y}_i)=\frac{e^{\hat{y}_i}}{\sum_{j=1}^{C}e^{\hat{y}_j}}">,\</center>
 where the number of classes is C = 4 in our case. Then, we train our algorithm and evaluate it on the validation set to choose the the number of epochs.
 
 
