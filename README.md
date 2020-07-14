@@ -79,9 +79,8 @@ where the number of classes is C = 4 in our case. Then, we train our algorithm a
 
 Our best SVM model achieved an accuracy of 69%. Interestingly, the recall percentages correlate well with the distribution of classes in our data. When looking at the unbalanced dataset, as less training data was available in each class, the corresponding recall values also decreased. Figure 0 is the confusion matrix with percent recall values, and figure 1 illustrates this by normalizing the number of clips in each class and the recall of each class.
 
-<img src="images/eval_fig0.png" width="48">
-![](images/eval_fig0.png)
 <p align="center">
+<img src="images/eval_fig0.png" width="200">
 Figure 0. Normalized confusion matrix for SVM model
 </p>
 
