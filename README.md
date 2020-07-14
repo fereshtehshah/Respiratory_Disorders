@@ -7,7 +7,14 @@
 
 
 # Introduction
+## Motivation
+Emergence of 2019 novel coronavirus (2019-nCoV) has caused a large global outbreak and major public health issues []. Viral pneumonia, difficulty in breathing and dyspnea got known as key symptoms in infected patients [] and in severe cases caused uncountable deaths since the virus outbreak [].  Such circumstances that have dramatically impacted all aspects of our lives, highlight the importance of  early and automated diagnosis of such respiratory disorders more than ever. Moreover, it emphasized the necessity of telemedicine and smart telediagnosis of disease while the availability of professional physicians are low and the risk of in-person check outs are high. 
 
+The current situation has highly motivated us to consider our project as an opportunity to develop a telemedicine platform for remote, automated diagnosis of adventitious pathological sounds which can contribute to diagnosis of respiratory disorders. Our system may provide a better chance of benefiting from treatments as well as preventing the spread of the coronavirus. Moreover, in a broader context, it can assist pulmonologists to diagnose varying degrees of sound abnormalities and lung ailments including asthma, chronic obstructive pulmonary disease, pneumonia, accumulation of fluid, infection, and inflammation of the airways and facilitate the long-term, remote monitoring and treatments in inexpensive, non-invasive, and safe ways. 
+
+## Objective
+In those COVID-19 cases, in which the infection has led to acute respiratory distress, breathing appears as distant sounds accompanied by coarse crackles and diffuse wheezes[]. Besides, the most respiratory ailments are accompanied by the same sound anomalies during the patient’s inspiration and/or expiration cycles[]. Thus, the key fundamental, initial step in developing our telemedicine platform is to determine the presence of adventitious sounds and distinguish among four classes of wheeze, crackle, a combination of both, and normal breathing. 
+Figure x-x illustrates xxxx.   xxxx. 
 
 # Data
 
