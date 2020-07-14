@@ -83,7 +83,7 @@ Our best SVM model achieved an accuracy of 69%. Interestingly, the recall percen
 <p align="center">Figure 0. Normalized confusion matrix for SVM model</p>
 
 ![](images/eval_fig1.png)
-->Figure 1. Comparison of normalized class distribution and normalized recall for each class in SVM model<-
+<p align="center">Figure 1. Comparison of normalized class distribution and normalized recall for each class in SVM model</p>
 
 The unbalanced data could be the reason for our relatively low accuracy of 69%. The healthy class, which had the most data available (3642 clips) achieved a recall of 82%, while the both class, with the least data available (506 clips) achieved a recall of 37%.
 
@@ -92,17 +92,17 @@ The unbalanced data could be the reason for our relatively low accuracy of 69%. 
 Our best CNN model achieved an accuracy of 71%. The normalized confusion matrix is shown in Figure 2, and a graph of the training and validation accuracy is shown in Figure 3.
 
 ![](images/eval_fig2.png)
-->Figure 2. Normalized confusion matrix for CNN model<-
+<p align="center">Figure 2. Normalized confusion matrix for CNN model</p>
 
 ![](images/eval_fig3.png)
-->Figure 3. Training and validation accuracy for CNN model across 30 epochs<-
+<p align="center">Figure 3. Training and validation accuracy for CNN model across 30 epochs</p>
 
 As seen in Figure 3, overfitting starts to happen at around the 20th epoch. Although more training at each epoch does result in a higher validation accuracy, the accuracy gain is much less when compared to the training accuracy.
 
 Like the SVM model, the recall percentages for the CNN model also correlate well with the distribution of classes in our data. The graph of the normalized class distribution and recall comparison is shown in Figure 4.
 
 ![](images/eval_fig4.png)
-->Figure 4. Comparison of normalized class distribution and normalized recall for each class in CNN model<-
+<p align="center">Figure 4. Comparison of normalized class distribution and normalized recall for each class in CNN model</p>
 
 ## Dataset Evaluation
 The dataset itself was a difficult dataset to work with. Aside from the unbalanced part of it that was discussed previously, there were various other features that could affect our accuracies.
