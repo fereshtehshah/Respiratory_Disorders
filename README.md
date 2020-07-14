@@ -86,7 +86,7 @@ Figure 0. Normalized confusion matrix for SVM model
 </p>
 
 <p align="center">
-<img src="images/eval_fig1.png" width="800">
+<img src="images/eval_fig1.png" width="600">
 <br>
 Figure 1. Comparison of normalized class distribution and normalized recall for each class in SVM model
 </p>
@@ -104,7 +104,7 @@ Figure 2. Normalized confusion matrix for CNN model
 </p>
 
 <p align="center">
-<img src="images/eval_fig3.png" width="800">
+<img src="images/eval_fig3.png" width="600">
 <br>
 Figure 3. Training and validation accuracy for CNN model across 30 epochs
 </p>
@@ -114,7 +114,7 @@ As seen in Figure 3, overfitting starts to happen at around the 20th epoch. Alth
 Like the SVM model, the recall percentages for the CNN model also correlate well with the distribution of classes in our data. The graph of the normalized class distribution and recall comparison is shown in Figure 4.
 
 <p align="center">
-<img src="images/eval_fig0.png" width="800">
+<img src="images/eval_fig4.png" width="600">
 <br>
 Figure 4. Comparison of normalized class distribution and normalized recall for each class in CNN model
 </p>
