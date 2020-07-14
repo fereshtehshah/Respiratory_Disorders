@@ -81,6 +81,7 @@ Our best SVM model achieved an accuracy of 69%. Interestingly, the recall percen
 
 <p align="center">
 <img src="images/eval_fig0.png" width="200">
+<br>
 Figure 0. Normalized confusion matrix for SVM model
 </p>
 
