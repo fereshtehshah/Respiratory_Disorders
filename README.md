@@ -79,12 +79,12 @@ where the number of classes is C = 4 in our case. Then, we train our algorithm a
 
 Our best SVM model achieved an accuracy of 69%. Interestingly, the recall percentages correlate well with the distribution of classes in our data. When looking at the unbalanced dataset, as less training data was available in each class, the corresponding recall values also decreased. Figure 0 is the confusion matrix with percent recall values, and figure 1 illustrates this by normalizing the number of clips in each class and the recall of each class.
 
-![](images/eval_fig0.png | width=100px)
+![](images/eval_fig0.png)
 <p align="center">
 Figure 0. Normalized confusion matrix for SVM model
 </p>
 
-![](images/eval_fig1.png | width=100)
+![](images/eval_fig1.png)
 <p align="center">
 Figure 1. Comparison of normalized class distribution and normalized recall for each class in SVM model
 </p>
@@ -96,12 +96,12 @@ The unbalanced data could be the reason for our relatively low accuracy of 69%. 
 Our best CNN model achieved an accuracy of 71%. The normalized confusion matrix is shown in Figure 2, and a graph of the training and validation accuracy is shown in Figure 3.
 
 <p align="center">
-![](images/eval_fig2.png width="100")
+![](images/eval_fig2.png)
 Figure 2. Normalized confusion matrix for CNN model
 </p>
 
-<p align="center">
 ![](images/eval_fig3.png)
+<p align="center">
 Figure 3. Training and validation accuracy for CNN model across 30 epochs
 </p>
 
@@ -109,8 +109,8 @@ As seen in Figure 3, overfitting starts to happen at around the 20th epoch. Alth
 
 Like the SVM model, the recall percentages for the CNN model also correlate well with the distribution of classes in our data. The graph of the normalized class distribution and recall comparison is shown in Figure 4.
 
-<p align="center">
 ![](images/eval_fig4.png)
+<p align="center">
 Figure 4. Comparison of normalized class distribution and normalized recall for each class in CNN model
 </p>
 
