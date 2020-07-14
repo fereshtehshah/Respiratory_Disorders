@@ -95,7 +95,7 @@ The unbalanced data could be the reason for our relatively low accuracy of 69%. 
 
 ## CNN Results
 
-Our best CNN model achieved an accuracy of 71%. The normalized confusion matrix is shown in Figure 2, and a graph of the training and validation accuracy is shown in Figure 3.
+Our best CNN model achieved an accuracy of 71%. The normalized confusion matrix is shown in Figure 2.
 
 <p align="center">
 <img src="images/eval_fig2.png" width="500">
@@ -103,18 +103,24 @@ Our best CNN model achieved an accuracy of 71%. The normalized confusion matrix 
 Figure 2. Normalized confusion matrix for CNN model
 </p>
 
+Overfitting starts to happen at around the 20th epoch. After the 20th epoch, the testing accuracy starts to increase at a noticeably slower rate than the training accuracy. The testing loss also stops decreasing at this point, while the training loss continues to decrease. Although more training at each epoch does result in a higher validation accuracy, the accuracy gain is much less when compared to the training accuracy. A graph of the training and validation accuracy is shown in Figure 3, and a graph of the training and validation loss is shown in Figure 4.
+
 <p align="center">
 <img src="images/eval_fig3.png" width="600">
 <br>
 Figure 3. Training and validation accuracy for CNN model across 30 epochs
 </p>
 
-As seen in Figure 3, overfitting starts to happen at around the 20th epoch. Although more training at each epoch does result in a higher validation accuracy, the accuracy gain is much less when compared to the training accuracy.
+<p align="center">
+<img src="images/eval_fig4.png" width="600">
+<br>
+Figure 3. Training and validation accuracy for CNN model across 30 epochs
+</p>
 
 Like the SVM model, the recall percentages for the CNN model also correlate well with the distribution of classes in our data. The graph of the normalized class distribution and recall comparison is shown in Figure 4.
 
 <p align="center">
-<img src="images/eval_fig4.png" width="600">
+<img src="images/eval_fig5.png" width="600">
 <br>
 Figure 4. Comparison of normalized class distribution and normalized recall for each class in CNN model
 </p>
