@@ -64,10 +64,10 @@ Figure **XX2**. Explained variance for increasing number of kept principal compo
 ### Support Vector Machines (SVM)
 ## Convolutional Neural Networks (CNN)
 
-As the second classification approach, we propose to use a Convolutional Network Network based system. The Convolutional Network Network (CNN) is a neural network classification technique that is commonly used in image classification. As opposed to the traditional neural networks, where each input feature is associated with seperate parameters, in CNN, parameters are shared among the features. This allows the network for learning local features. By this means, CNN automatically learns the important features without requiring extra feature extraction.
+As the second classification approach, we propose to use a Convolutional Network Network based system. The Convolutional Network Network (CNN) is a neural network classification technique that is commonly used in image classification <sup>[2](#imagenet)</sup> <sup>[3](#vggnet)</sup>. As opposed to the traditional neural networks, where each input feature is associated with seperate parameters, in CNN, parameters are shared among the features. This allows the network for learning local features. By this means, CNN automatically learns the important features without requiring extra feature extraction.
 CNN-based architectures construct a deep layered structure through convolutional kernels, which are learned from the data to extract complex features. Furthermore, CNN is computationally efficient. Convolution and pooling operations allow for parameter sharing and efficient computation.
 
-In our project, the MFCC-based features are 2-dimensional. Therefore, they can be treated as images and the assignment can be translated into an image classification task. After experimenting with commonly used CNN structures such as AlexNet and VGGNet, we designed our own CNN-based neural network structure as shown in Fig. **??**.
+In our project, the MFCC-based features are 2-dimensional. Therefore, they can be treated as images and the assignment can be translated into an image classification task. After experimenting with commonly used CNN structures such as AlexNet <sup>[2](#imagenet)</sup> and VGGNet <sup>[3](#vggnet)</sup>, we designed our own CNN-based neural network structure as shown in Fig. **??**.
 
 Our network includes three convolutional layers (each followed by a max-pooling layer) and four fully connected layers as well as the output layer. The convolution operations are performed with a kernel size of 15x15 and stride of 1. The fully connected layers have 6784, 2048, 1024 and 128 neurons, respectively. The activation function for all convolutional and fully connected layers is Rectified Linear Unit (ReLU). The output layer, consisting of 4 nodes, implements a softmax activation function. The max-pooling operations are performed with a kernel of size 2x2 and stride 1.
 
@@ -152,3 +152,5 @@ In addition to the 2 dimensional CNN, we tried to use 1 dimensional CNN. For tha
 
 # References
 <a name="pca">[1]</a>: Wold, Svante, Kim Esbensen, and Paul Geladi. "Principal component analysis." Chemometrics and intelligent laboratory systems 2.1-3 (1987): 37-52.
+<a name="imagenet">[2]</a>: Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks." Advances in neural information processing systems. 2012.
+<a name="vggnet">[3]</a>: Simonyan, Karen, and Andrew Zisserman. "Very deep convolutional networks for large-scale image recognition." arXiv preprint arXiv:1409.1556 (2014).
