@@ -23,16 +23,22 @@ Vesicular or normal lung sounds are usually soft and low-pitched and heard durin
 <p align="center">
 <img src="images/Pic_Normal.png" width="750">
 <br>
-Figure 1 - a)Typical waveform from normal breath - Amplitude(dB)/ Time(milisecond). It shows a typical respiratory cycle with time duration about 35 milisecond. b)Spectral Pitch Display - Frequency(Hz)/ Time(milisecond). c)Frequency spectrogram for a normal breath - Frequency(Hz)/ Time(milisecond).
+Figure 1:
+a) Typical waveform from normal breath - (dB/milisecond). It shows a typical respiratory cycle with time duration about 35 milisecond. 
+b & c) Spectral Pitch & Frequency spectrogram for a normal breath (Hz/milisecond).
 </p>
 
-##### Wheeze
-Wheezes are continuous, high-pitched adventitious lung sounds with the typical frequency range from 100 Hz to 5000 Hz and duration above 80 milisecond. Wheezes commonly occur at the end of the inspiratory phase or early expiratory phase as a result of the gradual opening or closing of a collapsed airway. They sound like a whistle when you breathe and are most audible during the expiratory phase. Aside from narrowed airways, wheezes can also be caused by inflammation secondary to asthma and bronchitis. If bilateral wheezing is heard in both lungs, this is an indication of bronchoconstriction. When wheezes are heard in only one lung this is referred to unilateral wheezing which indicates that a forigen body obstruction is presented []. 
+#### Wheeze
+Wheezes are continuous, high-pitched adventitious lung sounds with the typical frequency range from 100 Hz to 5000 Hz and duration above 40 milisecond. Wheezes commonly occur at the end of the inspiratory phase or early expiratory phase as a result of the gradual opening or closing of a collapsed airway. They sound like a whistle when you breathe and are most audible during the expiratory phase. Aside from narrowed airways, wheezes can also be caused by inflammation secondary to asthma and bronchitis. If bilateral wheezing is heard in both lungs, this is an indication of bronchoconstriction. When wheezes are heard in only one lung this is referred to unilateral wheezing which indicates that a forigen body obstruction is presented []. 
 
 <p align="center">
 <img src="images/Pic_Wheeze.png" width="750">
 <br>
-Figure **XX1** Wheezes ....</p>
+Figure 2:
+a) Typical waveform from wheeze- (dB/milisecond). It shows a respiratory cycle with time duration about 40 milisecond. 
+b & c) Spectral Pitch & Frequency spectrogram for a wheeze sound (Hz/milisecond).
+
+</p>
 
 ##### Crackles
 Crackles are discontinuous, short, explosive, lung adventitious sounds in the lung fields that have fluid in the small airways. Crackles can occur on both inspiration and expiration but are more common during the inspiratory phase. There are two types of fine and coarse crackles. The fine crackles are about 650 Hz and at least minimum time duration about 5 milisecond. While the frequency of the coarse crackles is about 350 Hz and the minimum duration about 14 miliseconds. Such frequency and time ranges shows that difference between the two is that fine crackles have a higher frequency and a shorter duration and are caused by a sudden opening of a narrowed or closed airway. The sound of fine crackles can be compared to that of salt heated on a frying pan. Coarse crackles, on the other hand, are louder, lower in pitch and last longer. They are caused by secretions in the airways. The sound of coarse crackles is like pouring water out of a bottle. Crackles are often associated with lung inflammation or infection like Cronic Obstructive Pulminary Disease (COPD), chronic bronchitis, pneumonia, and pulmonary fibrosis.
@@ -40,7 +46,10 @@ Crackles are discontinuous, short, explosive, lung adventitious sounds in the lu
 <p align="center">
 <img src="images/Pic_Crackle.png" width="750">
 <br>
-Figure **XX1** Crackles ....
+Figure 3:
+a) Typical waveform from crackle- (dB/milisecond). It shows a respiratory cycle with time duration about 50 milisecond. 
+b & c) Spectral Pitch & Frequency spectrogram for a crackle sound (Hz/milisecond).
+
 </p>
 
 
