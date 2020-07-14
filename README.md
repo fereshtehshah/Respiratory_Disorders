@@ -8,17 +8,17 @@
 
 # Introduction
 ## Motivation
-Emergence of 2019 novel coronavirus (2019-nCoV) has caused a large global outbreak and major public health issues []. Viral pneumonia, difficulty in breathing and dyspnea got known as key symptoms in infected patients [] and in severe cases caused uncountable deaths since the virus outbreak [].  Such circumstances that have dramatically impacted all aspects of our lives, highlight the importance of  early and automated diagnosis of such respiratory disorders more than ever. Moreover, it emphasized the necessity of telemedicine and smart telediagnosis of disease while the availability of professional physicians are low and the risk of in-person check outs are high. 
+The emergence of the 2019 novel coronavirus (2019-nCoV) has caused a large global outbreak and major public health issues []. Viral pneumonia, difficulty in breathing and dyspnea became known as key symptoms in infected patients [] and in severe cases caused uncountable deaths since the virus outbreak [].  These circumstances that have dramatically impacted all aspects of our lives highlight the importance of  early and automated diagnosis of such respiratory disorders more than ever. Moreover, it emphasized the necessity of telemedicine and smart telediagnosis of disease while the availability of professional physicians are low and the risk of in-person check outs are high. 
 
 The current situation has highly motivated us to consider our project as an opportunity to develop a telemedicine platform for remote, automated diagnosis of adventitious pathological sounds which can contribute to diagnosis of respiratory disorders. Our system may provide a better chance of benefiting from treatments as well as preventing the spread of the coronavirus. Moreover, in a broader context, it can assist pulmonologists to diagnose varying degrees of sound abnormalities and lung ailments including asthma, chronic obstructive pulmonary disease, pneumonia, accumulation of fluid, infection, and inflammation of the airways and facilitate the long-term, remote monitoring and treatments in inexpensive, non-invasive, and safe ways. 
 
 ## Objective
-In those COVID-19 cases, in which the infection has led to acute respiratory distress, breathing appears as distant sounds accompanied by coarse crackles and diffuse wheezes[]. Besides, the most respiratory ailments are accompanied by the same sound anomalies during the patient’s inspiration and/or expiration cycles[]. Thus, the key fundamental, initial step in developing our telemedicine platform is to determine the presence of adventitious sounds and distinguish among four classes of wheeze, crackle, a combination of both, and normal breathing. 
+In those COVID-19 cases, in which the infection has led to acute respiratory distress, breathing appears as distant sounds accompanied by coarse crackles and diffuse wheezes[]. Besides, most respiratory ailments are accompanied by the same sound anomalies during the patient’s inspiration and/or expiration cycles[]. Thus, the key fundamental, initial step in developing our telemedicine platform is to determine the presence of adventitious sounds and distinguish between four classes of wheeze, crackle, a combination of both, and normal breathing. 
 Figure x-x illustrates xxxx.   xxxx. 
 
 # Data
 
-Data is taken from the _Respiratory Sound Database_ created by two research teams in Portugal and Greece. It consists of 920 recordings. Each recording is varying in length. A scatter plot of the length of recordings is given in **FIGURE**. Recordings were taken from 126 patients and each recording is annotated. Annotations are comprised of beginning and end times of each respiratory cycle and whether the cycle contains crackle and/or wheeze. Crackles and wheezes are called adventitious sounds and presence of them are used by health care professionals when diagnosing respiratory diseases. Number of respiratory cycles containing each adventitious cycle is shown in **PLOT**.
+Data is taken from the _Respiratory Sound Database_, created by two research teams in Portugal and Greece. It consists of 920 recordings. Each recording varies in length. A scatter plot of the length of recordings is given in **FIGURE**. Recordings were taken from 126 patients and each recording is annotated. Annotations are comprised of beginning and end times of each respiratory cycle and whether the cycle contains crackle and/or wheeze. Crackles and wheezes are called adventitious sounds and the presence of them is used by health care professionals when diagnosing respiratory diseases. The number of respiratory cycles containing each adventitious cycle is shown in **PLOT**.
 
 ![](images/plt_clip_lengths.png)
 
@@ -32,14 +32,14 @@ Preprocessing of the data starts from importing the sound files, resampling and 
 
 ### Feature Extraction (MFCC)
 
-Mel Frequency Cepstrum Coefficients were used as features of the sound clips. MFCCs are widely used in speech recognition systems. They are also being used extensively in previous work on detection of adventitious respiratory sounds, they provide a measure of short term power spectrum of time domain signals. Both the frequency and time content are important to distinguish between different adventitious sounds, since different adventitious sounds can exist in a single clip at different time periods and they differ in duration. Therefore, MFCC is helpful in capturing the change in frequency content of a signal over time. Frequencies are placed on a mel scale, which is a nonlinear scale of frequencies whose distances are percieved to be equal by the human auditory system. Output of MFCC is a 2 dimensional feature vector (time and frequency), which was then flattened into a one dimensional array before further processing.  
+Mel Frequency Cepstrum Coefficients were used as features of the sound clips. MFCCs are widely used in speech recognition systems. They are also being used extensively in previous work on detection of adventitious respiratory sounds as they provide a measure of short term power spectrum of time domain signals. Both the frequency and time content are important to distinguish between different adventitious sounds, since different adventitious sounds can exist in a single clip at different time periods and they differ in duration. Therefore, MFCC is helpful in capturing the change in frequency content of a signal over time. Frequencies are placed on a mel scale, which is a nonlinear scale of frequencies whose distances are percieved to be equal by the human auditory system. Output of MFCC is a 2 dimensional feature vector (time and frequency), which was then flattened into a one dimensional array before further processing.  
 
 A sample output from MFCC content of clips containing different adventitious sounds is given below.
 
 **FIGURE**
 
 ### Dataset Partitioning
-Since the dataset does not include seperate recordings for training and testing, we randomly partition the dataset into training (80%) and testing (20%) by maintaining the class distribution for both sets. For the first classification method (SVM), we perform a 5-fold cross validation to pick the hyperparameters, therefore, no seperate validation dataset is required. As for the second classification method (CNN), we split the training dataset so that 70% of the original dataset is used for training and 10% is used for validation. Fig. **XX1** illustrates the class distribution for CNN system.
+Since the dataset does not include seperate recordings for training and testing, we randomly partitioned the dataset into training (80%) and testing (20%) by maintaining the class distribution for both sets. For the first classification method (SVM), we perform a 5-fold cross validation to pick the hyperparameters, therefore, no seperate validation dataset is required. As for the second classification method (CNN), we split the training dataset so that 70% of the original dataset is used for training and 10% is used for validation. Fig. **XX1** illustrates the class distribution for CNN system.
 
 <p align="center">
 <img src="images/classDistribution.png" width="600">
@@ -50,7 +50,7 @@ Figure **XX1**. Distribution of the dataset to be used for CNN-based system
 # Classification Methods
 
 ## Principal Component Analysis (PCA) and Support Vector Machines (SVM) in Pipeline
-As for the first classification method of our project, we combine an unsupervised learning method, PCA, with a supervised learning method, SVM. The main reason behind including PCA before SVM is to reduce the dimensionality of the dataset and hence increase the learning rate. The details for these methods are explained next.
+For the first classification method of our project, we combined an unsupervised learning method, PCA, with a supervised learning method, SVM. The main reason behind including PCA before SVM was to reduce the dimensionality of the dataset and hence increase the learning rate. The details for these methods are explained next.
 
 ###  Principal Component Analysis (PCA) for Dimensionality Reduction
 
@@ -71,7 +71,7 @@ Figure **XX2**. Explained variance for increasing number of kept principal compo
 ### Support Vector Machines (SVM)
 ## Convolutional Neural Networks (CNN)
 
-As the second classification approach, we propose to use a Convolutional Network Network based system. The Convolutional Network Network (CNN) is a neural network classification technique that is commonly used in image classification <sup>[2](#imagenet)</sup> <sup>[3](#vggnet)</sup>. As opposed to the traditional neural networks, where each input feature is associated with seperate parameters, in CNN, parameters are shared among the features. This allows the network for learning local features. By this means, CNN automatically learns the important features without requiring extra feature extraction.
+As the second classification approach, we propose to use a Convolutional Neural Network based system. The Convolutional Neural Network (CNN) is a neural network classification technique that is commonly used in image classification <sup>[2](#imagenet)</sup> <sup>[3](#vggnet)</sup>. As opposed to the traditional neural networks, where each input feature is associated with seperate parameters, in CNN, parameters are shared among the features. This allows the network for learning local features. By this means, CNN automatically learns the important features without requiring extra feature extraction.
 CNN-based architectures construct a deep layered structure through convolutional kernels, which are learned from the data to extract complex features. Furthermore, CNN is computationally efficient. Convolution and pooling operations allow for parameter sharing and efficient computation.
 
 In our project, the MFCC-based features are 2-dimensional. Therefore, they can be treated as images and the assignment can be translated into an image classification task. After experimenting with commonly used CNN structures such as AlexNet <sup>[2](#imagenet)</sup> and VGGNet <sup>[3](#vggnet)</sup>, we designed our own CNN-based neural network structure as shown in Fig. **??**.
