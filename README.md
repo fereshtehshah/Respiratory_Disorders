@@ -18,7 +18,9 @@ In those COVID-19 cases, in which the infection has led to acute respiratory dis
 ### Respiratory Sounds
 
 Signal Waveform ...
+
 Spectral Pitch Display ...
+
 Spectrum frequency display ...
 
 #### Normal Lung Sounds
