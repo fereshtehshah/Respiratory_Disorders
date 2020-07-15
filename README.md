@@ -1,7 +1,4 @@
 
-# Respiratory Sounds Classification
-
-## CS 7651 - Machine Learning (Team 7)
 **Team Members**: Anjana Nandagopal, Elvan Ugurlu, Fereshteh Shahmiri, Serhat Erdogan, Sukris Vong.
 
 # Introduction
