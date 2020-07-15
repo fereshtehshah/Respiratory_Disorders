@@ -50,13 +50,9 @@ b & c) Spectral Pitch & Frequency spectrogram for a crackle sound (Hz/milisecond
 </p>
 
 
-
-<iframe src="https://www.youtube.com/embed/epyYDJCaaL0" 
-    width="560" 
-    height="315"
-    frameborder="0" 
-    allowfullscreen>
-</iframe>
+<p align="center">
+<iframe width="600"  src="https://www.youtube.com/embed/epyYDJCaaL0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
 
 ## Overview of Data and Applied Methods in Literature
@@ -74,7 +70,7 @@ Figure 4: Workflow from preprocessing to classification
 
 ## Data
 
-Data is taken from the _Respiratory Sound Database_, created by two research teams in Portugal and Greece. It consists of 920 recordings. Each recording varies in length. A scatter plot of the length of recordings is given in **FIGURE**. Recordings were taken from 126 patients and each recording is annotated. Annotations are comprised of beginning and end times of each respiratory cycle and whether the cycle contains crackle and/or wheeze. Crackles and wheezes are called adventitious sounds and the presence of them is used by health care professionals when diagnosing respiratory diseases. The number of respiratory cycles containing each adventitious cycle is shown in **PLOT**.
+Data is taken from the _Respiratory Sound Database_, created by two research teams in Portugal and Greece <sup>[0](#dataset)</sup> . It consists of 920 recordings. Each recording varies in length. A scatter plot of the length of recordings is given in **FIGURE**. Recordings were taken from 126 patients and each recording is annotated. Annotations are comprised of beginning and end times of each respiratory cycle and whether the cycle contains crackle and/or wheeze. Crackles and wheezes are called adventitious sounds and the presence of them is used by health care professionals when diagnosing respiratory diseases. The number of respiratory cycles containing each adventitious cycle is shown in **PLOT**.
 
 <p align="center">
 <img src="images/plt_clip_lengths_hist.png" width="600">
@@ -250,10 +246,13 @@ Possible considerations to increase the performance of the system are listed as 
 * Incorporating a Recurrent Neural Network (RNN)-based structure to address the temporal dynamic behavior.
 
 # References
-<a name="pca">[1]</a>: Wold, Svante, Kim Esbensen, and Paul Geladi. "Principal component analysis." Chemometrics and intelligent laboratory systems 2.1-3 (1987): 37-52.
 
-<a name="imagenet">[2]</a>: Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks." Advances in neural information processing systems. 2012.
+<a name="dataset">[0]</a> Rocha, B. M., et al. "Α respiratory sound database for the development of automated classification." International Conference on Biomedical and Health Informatics. Springer, Singapore, 2017.
 
-<a name="vggnet">[3]</a>: Simonyan, Karen, and Andrew Zisserman. "Very deep convolutional networks for large-scale image recognition." arXiv preprint arXiv:1409.1556 (2014).
+<a name="pca">[1]</a> Wold, Svante, Kim Esbensen, and Paul Geladi. "Principal component analysis." Chemometrics and intelligent laboratory systems 2.1-3 (1987): 37-52.
 
-<a name="adam">[4]</a>: Kingma, Diederik P., and Jimmy Ba. "Adam: A method for stochastic optimization." arXiv preprint arXiv:1412.6980 (2014).
+<a name="imagenet">[2]</a> Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks." Advances in neural information processing systems. 2012.
+
+<a name="vggnet">[3]</a> Simonyan, Karen, and Andrew Zisserman. "Very deep convolutional networks for large-scale image recognition." arXiv preprint arXiv:1409.1556 (2014).
+
+<a name="adam">[4]</a> Kingma, Diederik P., and Jimmy Ba. "Adam: A method for stochastic optimization." arXiv preprint arXiv:1412.6980 (2014).
