@@ -51,9 +51,6 @@ b & c) Spectral Pitch & Frequency spectrogram for a crackle sound (Hz/milisecond
 
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-
 <iframe src="https://www.youtube.com/embed/epyYDJCaaL0" 
     width="560" 
     height="315"
