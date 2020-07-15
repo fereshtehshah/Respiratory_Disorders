@@ -263,3 +263,64 @@ Possible considerations to increase the performance of the system are listed as 
 <a name="vggnet">[3]</a> Simonyan, Karen, and Andrew Zisserman. "Very deep convolutional networks for large-scale image recognition." arXiv preprint arXiv:1409.1556 (2014).
 
 <a name="adam">[4]</a> Kingma, Diederik P., and Jimmy Ba. "Adam: A method for stochastic optimization." arXiv preprint arXiv:1412.6980 (2014).
+
+
+Bhateja, Vikrant, Ahmad Taquee, and Dilip Kumar Sharma. 2019. “Pre-Processing and Classification of Cough Sounds in Noisy Environment Using SVM.” 2019 4th International Conference on Information Systems and Computer Networks (ISCON). https://doi.org/10.1109/iscon47742.2019.9036277.
+
+Chambres, Gaetan, Pierre Hanna, and Myriam Desainte-Catherine. 2018. “Automatic Detection of Patient with Respiratory Diseases Using Lung Sound Analysis.” 2018 International Conference on Content-Based Multimedia Indexing (CBMI). https://doi.org/10.1109/cbmi.2018.8516489.
+
+Chen, Hai, Xiaochen Yuan, Zhiyuan Pei, Mianjie Li, and Jianqing Li. 2019. “Triple-Classification of Respiratory Sounds Using Optimized S-Transform and Deep Residual Networks.” IEEE Access. https://doi.org/10.1109/access.2019.2903859.
+
+Chowdhury, S. K., and A. K. Majumder. 1982. “Frequency Analysis of Adventitious Lung Sounds.” Journal of Biomedical Engineering. https://doi.org/10.1016/0141-5425(82)90048-6.
+
+Cinkooglu, Akin, Department of Radiology, Ege University School of Medicine, Izmir, Turkey, Selen Bayraktaroglu, Recep Savas, et al. 2020. “Lung Changes on Chest CT During 2019 
+
+Novel Coronavirus (COVID-19) Pneumonia.” European Journal of Breast Health. https://doi.org/10.5152/ejbh.2020.010420.
+
+Cugell, David, Noam Gavriely, and Dan Zellner. 2012. “Lung Sounds and the Stethoscope — a Lung Sounds Primer.” MedEdPORTAL. https://doi.org/10.15766/mep_2374-8265.9066.
+
+Devangan, Hupendra, Nitin Jain, and Chouksey Engineering College Bilaspur India. 2015. “A Review on Classification of Adventitious Lung Sounds.” International Journal of Engineering Research and. https://doi.org/10.17577/ijertv4is051274.
+
+García-Ordás, María Teresa, José Alberto Benítez-Andrades, Isaías García-Rodríguez, Carmen Benavides, and Héctor Alaiz-Moretón. 2020. “Detecting Respiratory Pathologies Using
+Convolutional Neural Networks and Variational Autoencoders for Unbalancing Data.” Sensors  20 (4). https://doi.org/10.3390/s20041214.
+
+İçer, Semra, and Şerife Gengeç. 2014. “Classification and Analysis of Non-Stationary Characteristics of Crackle and Rhonchus Lung Adventitious Sounds.” Digital Signal Processing. https://doi.org/10.1016/j.dsp.2014.02.001.
+
+Lehrer, Steven. 2018. Understanding Lung Sounds: Third Edition. Steven Lehrer.
+
+Liu, Renyu, Shengsheng Cai, Kexin Zhang, and Nan Hu. 2019. “Detection of Adventitious Respiratory Sounds Based on Convolutional Neural Network.” 2019 International Conference on Intelligent Informatics and Biomedical Sciences (ICIIBMS). https://doi.org/10.1109/iciibms46890.2019.8991459.
+
+Makic, Mary Beth Flynn. 2020. “Prone Position of Patients with COVID-19 and Acute Respiratory Distress Syndrome.” Journal of PeriAnesthesia Nursing. https://doi.org/10.1016/j.jopan.2020.05.008.
+
+Marini, John J., and Luciano Gattinoni. 2020. “Management of COVID-19 Respiratory Distress.” JAMA. https://doi.org/10.1001/jama.2020.6825.
+
+Marques, Alda, and Ana Oliveira. 2018. “Normal Versus Adventitious Respiratory Sounds.” Breath Sounds. https://doi.org/10.1007/978-3-319-71824-8_10.
+
+Nakamura, Naoki, Masaru Yamashita, and Shoichi Matsunaga. 2016. “Detection of Patients Considering Observation Frequency of Continuous and Discontinuous Adventitious Sounds in Lung Sounds.” 2016 38th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC). https://doi.org/10.1109/embc.2016.7591472.
+
+Ntalampiras, Stavros, and Ilyas Potamitis. 2019. “Classification of Sounds Indicative of Respiratory Diseases.” Engineering Applications of Neural Networks. https://doi.org/10.1007/978-3-030-20257-6_8.
+
+Okubo, Takanori, Masaru Yamashita, Katsuya Yamauchi, and Shoichi Matsunaga. 2013. “Modeling Occurrence Tendency of Adventitious Sounds and Noises for Detection of Abnormal Lung Sounds.” https://doi.org/10.1121/1.4800330.
+
+Pan, Feng, Tianhe Ye, Peng Sun, Shan Gui, Bo Liang, Lingli Li, Dandan Zheng, et al. 2020. “Time Course of Lung Changes at Chest CT during Recovery from Coronavirus Disease 2019 (COVID-19).” Radiology 295 (3): 715–21.
+
+Perna, Diego. 2018. “Convolutional Neural Networks Learning from Respiratory Data.” 2018 IEEE International Conference on Bioinformatics and Biomedicine (BIBM). https://doi.org/10.1109/bibm.2018.8621273.
+
+Ploysongsang, Yongyudh, Vijay K. Iyer, and Panapakkam A. Ramamoorthy. 1991. “Reproducibility of the Vesicular Breath Sounds in Normal Subjects.” Respiration. https://doi.org/10.1159/000195918.
+
+Pramono, Renard Xaviero Adhi, Stuart Bowyer, and Esther Rodriguez-Villegas. 2017. “Automatic Adventitious Respiratory Sound Analysis: A Systematic Review.” PloS One 12 (5): e0177926.
+
+Rocha, B. M., D. Filos, L. Mendes, I. Vogiatzis, E. Perantoni, E. Kaimakamis, P. Natsiavas, et al. 2018. “Α Respiratory Sound Database for the Development of Automated Classification.” Precision Medicine Powered by pHealth and Connected Health. https://doi.org/10.1007/978-981-10-7419-6_6.
+
+Saraiva, A., D. Santos, A. Francisco, Jose Sousa, N. Ferreira, Salviano Soares, and Antonio Valente. 2020. “Classification of Respiratory Sounds with Convolutional Neural Network.” Proceedings of the 13th International Joint Conference on Biomedical Engineering Systems and Technologies. https://doi.org/10.5220/0008965101380144.
+
+Sawant, R. K., and A. A. Ghatol. 2015. “Classification of Respiratory Diseases Using Respiratory Sound Analysis.” International Journal of Signal Processing Systems. https://doi.org/10.12720/ijsps.4.1.62-66.
+Scott, Gregory, Edward J. Presswood, Boikanyo Makubate, and Frank Cross. 2013. “Lung Sounds: How Doctors Draw Crackles and Wheeze.” Postgraduate Medical Journal. https://doi.org/10.1136/postgradmedj-2012-131410.
+
+Spieth, P. M., and H. Zhang. 2011. “Analyzing Lung Crackle Sounds: Stethoscopes and beyond.” Intensive Care Medicine. https://doi.org/10.1007/s00134-011-2292-3.
+
+Vrbancic, Grega, Iztok Jr Fister, and Vili Podgorelec. 2019. “Automatic Detection of Heartbeats in Heart Sound Signals Using Deep Convolutional Neural Networks.” Elektronika Ir Elektrotechnika. https://doi.org/10.5755/j01.eie.25.3.23680.
+
+Xu, Zhe, Lei Shi, Yijin Wang, Jiyuan Zhang, Lei Huang, Chao Zhang, Shuhong Liu, et al. 2020. “Pathological Findings of COVID-19 Associated with Acute Respiratory Distress Syndrome.” The Lancet. Respiratory Medicine 8 (4): 420–22.
+
+
