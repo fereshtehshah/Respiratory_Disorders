@@ -1,6 +1,6 @@
 <link type="text/css" rel="stylesheet" href="main.css" />
 
-**Team Members**:
+**Team Members**: <br>
 Anjana Nandagopal, Elvan  Ugurlu, Fereshteh Shahmiri, Serhat Erdogan, Sukris Vong.
 
 # Introduction
