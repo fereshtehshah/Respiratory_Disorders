@@ -228,13 +228,16 @@ Furthermore, considering the number of parameters to be trained (over 16 million
 # Discussion & Conclusion
 
 The results indicate that the CNN-based classification system overperforms the SVM-based system. Considering the limited size of the dataset and the challenges present in recorded data, in the light of other results in literature, we believe 71% accuracy is a successful result. However, there is definitely some room for improvement. In this section, we present possible future directions for the project. 
+
 One possible approach is to modify the CNN structure. We tried different kernel sizes (3x3, 5x5, and 11x11), but the accuracy results turned out to be comparable. Therefore, we reported the results for only the best performing kernel size (15x15). Furthermore, since the dataset is limiting the learning capability of the CNN, a transfer learning approach might be implemented, and the classification segments of the new network can be customized for this specific application.
+
 In addition to the 2-dimensional CNN, we tried to use 1 dimensional CNN. For that, we used two different input types: 1) Flattened MFCC coefficients of size 8620x1, 2) Features obtained after applying PCA (1916x1). Training the former network took significantly long amount of time (300 s/epoch) since it required training 71 million parameters. The highest accuracy achieved with such a structure was 63%. On the other hand, training the second network took considerably less time (70 s/epoch) at the expense of significantly lower accuracy (54%). These results indicate that 2-dimensional CNN structure outperforms 1 dimensional CNN structures for this dataset. 
+
 Possible considerations to increase the performance of the system are listed as follows:
-•	Using a larger dataset that has a balanced class distribution,
-•	Utilizing other feature extraction methods such as short-time Fourier transform (STFT),
-•	Applying advanced signal processing techniques to extract more informative and distinctive features from the recordings,
-•	Incorporating a Recurrent Neural Network (RNN)-based structure to address the temporal dynamic behavior.
+* Using a larger dataset that has a balanced class distribution,
+* Utilizing other feature extraction methods such as short-time Fourier transform (STFT),
+* Applying advanced signal processing techniques to extract more informative and distinctive features from the recordings,
+* Incorporating a Recurrent Neural Network (RNN)-based structure to address the temporal dynamic behavior.
 
 # References
 <a name="pca">[1]</a>: Wold, Svante, Kim Esbensen, and Paul Geladi. "Principal component analysis." Chemometrics and intelligent laboratory systems 2.1-3 (1987): 37-52.
