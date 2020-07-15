@@ -2,7 +2,7 @@
 # Respiratory Sounds Classification
 
 ## CS 7651 - Machine Learning (Team 7)
-Team Members: Anjana Nandagopal, Elvan Ugurlu, Fereshteh Shahmiri, Serhat Erdogan, Sukris Vong.
+**Team Members**: Anjana Nandagopal, Elvan Ugurlu, Fereshteh Shahmiri, Serhat Erdogan, Sukris Vong.
 
 # Introduction
 ## Motivation
@@ -50,7 +50,7 @@ b & c) Spectral Pitch & Frequency spectrogram for a crackle sound (Hz/milisecond
 </p>
 
 
-<iframe src="https://www.youtube.com/embed/epyYDJCaaL0/{{ include.id }}" 
+<iframe src="https://www.youtube.com/embed/epyYDJCaaL0/" 
     width="560" 
     height="315"
     frameborder="0" 
