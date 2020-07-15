@@ -49,13 +49,13 @@ a) Typical waveform from crackle- (dB/milisecond). It shows a respiratory cycle 
 b & c) Spectral Pitch & Frequency spectrogram for a crackle sound (Hz/milisecond).
 </p>
 
-
-<iframe src="https://www.youtube.com/embed/epyYDJCaaL0/" 
+<iframe src="https://www.youtube.com/embed/{{ epyYDJCaaL0 }}" 
     width="560" 
     height="315"
     frameborder="0" 
     allowfullscreen>
 </iframe>
+
 
 ## Overview of Data and Applied Methods in Literature
 Initially we explored the literature to see how such study is typically done. The main purpose of using the "Respiratory Sound" dataset (which we will explain in next part) is to build a model to classify healthy vs unhealthy lung sounds, or to build a model to classify respiratory diseases through detection of sound anomalies. The machine learning pipeline that most of existing projects have used include three phases. First one is preprocessing of respiratory sound through noise reduction and audio filtering techniques. 
