@@ -48,7 +48,7 @@ b & c) Spectral Pitch & Frequency spectrogram for a crackle sound (Hz/milisecond
 
 
 <p align="center">
-<iframe width="600"  src="https://www.youtube.com/embed/epyYDJCaaL0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="600" height="400"  src="https://www.youtube.com/embed/epyYDJCaaL0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
 
@@ -105,7 +105,7 @@ Figure 8: Sample output of MFCC of clips chosen from each class.
 </p>
 
 ## Dataset Partitioning
-Since the dataset does not include seperate recordings for training and testing, we randomly partitioned the dataset into training (80%) and testing (20%) by maintaining the class distribution for both sets. For the first classification method (SVM), we perform a 5-fold cross validation to pick the hyperparameters, therefore, no seperate validation dataset is required. As for the second classification method (CNN), we split the training dataset so that 70% of the original dataset is used for training and 10% is used for validation. Fig. 9 illustrates the class distribution for CNN system.
+Since the dataset does not include seperate recordings for training and testing, we randomly partitioned the dataset into training (80%) and testing (20%) by maintaining the class distribution for both sets. For the first classification method (SVM), we perform a 5-fold cross validation to pick the hyperparameters, therefore, no seperate validation dataset is required. As for the second classification method (CNN), we split the training dataset so that 70% of the original dataset is used for training and 10% is used for validation. Figure 9 illustrates the class distribution for CNN system.
 
 <p align="center">
 <img src="images/classDistribution.png" width="600">
@@ -251,6 +251,8 @@ Possible considerations to increase the performance of the system are listed as 
 
 
 # Conclusion
+
+Respiratory sounds are shown to be key factors in diagnosing pulmonary diseases. Automating the process of detection and classification of the respiratory sounds promises great advantages in early diagnosis and treatment of such diseases. In this project, we studied respiratory sound classification based on the presence of adventitious sounds such as wheeze and crackle. To do so, we utilized the Respiratory Sound Database <sup>[24](#dataset)</sup> that includes recordings from patients that are labeled by medical doctors. Considering different frequency spectrum characteristics of these adventitious sounds, we extracted features from the recordings by using MFCC. For classifying the samples, we implemented two different approaches. First approach consists of flattening the MFCC coefficients, applying PCA to reduce the dimensionality and finally applying SVM. Second approach utilizes a CNN-based neural network structure by treating the problem as an image classification task. We obtained 69% and 71% accuracies with the first and second approaches, respectively. Considering the challenges that the dataset has, we believe these results are relatively successful. In the discussion part, we proposed future directions that can possible increase the accuracy.
 
 # References
 <a name="dataset">[1]</a> Bhateja, Vikrant, Ahmad Taquee, and Dilip Kumar Sharma. 2019. “Pre-Processing and Classification of Cough Sounds in Noisy Environment Using SVM.” 2019 4th International Conference on Information Systems and Computer Networks (ISCON). https://doi.org/10.1109/iscon47742.2019.9036277.
