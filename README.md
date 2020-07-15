@@ -79,13 +79,13 @@ Data is taken from the _Respiratory Sound Database_, created by two research tea
 <p align="center">
 <img src="images/plt_clip_lengths_hist.png" width="600">
 <br>
-Figure **XX1**. 
+Figure 5: Distribution of clip lengths
 </p>
 
 <p align="center">
 <img src="images/plt_class_dist.png" width="600">
 <br>
-Figure **XX1**. 
+Figure 6: Class distribution of clips 
 </p>
 
 
@@ -95,11 +95,21 @@ Preprocessing of the data starts from importing the sound files, resampling and 
 
 ## Feature Extraction (MFCC)
 
-Mel Frequency Cepstrum Coefficients were used as features of the sound clips. MFCCs are widely used in speech recognition systems. They are also being used extensively in previous work on detection of adventitious respiratory sounds as they provide a measure of short term power spectrum of time domain signals. Both the frequency and time content are important to distinguish between different adventitious sounds, since different adventitious sounds can exist in a single clip at different time periods and they differ in duration. Therefore, MFCC is helpful in capturing the change in frequency content of a signal over time. Frequencies are placed on a mel scale, which is a nonlinear scale of frequencies whose distances are percieved to be equal by the human auditory system. Output of MFCC is a 2 dimensional feature vector (time and frequency), which was then flattened into a one dimensional array before further processing.  
+Mel Frequency Cepstrum Coefficients were used as features of the sound clips. MFCCs are widely used in speech recognition systems. They are also being used extensively in previous work on detection of adventitious respiratory sounds as they provide a measure of short term power spectrum of time domain signals. Both the frequency and time content are important to distinguish between different adventitious sounds, since different adventitious sounds can exist in a single clip at different time periods and they differ in duration. Therefore, MFCC is helpful in capturing the change in frequency content of a signal over time. Frequencies are placed on a mel scale, which is a nonlinear scale of frequencies whose distances are percieved to be equal by the human auditory system. Output of MFCC is a 2 dimensional feature vector (time and frequency), which was then flattened into a one dimensional array before further processing. The process of calculating MFCC is given in Figure 7.
 
-A sample output from MFCC content of clips containing different adventitious sounds is given below.
+<p align="center">
+<img src="images/mfcc_flowchart.png" width="600">
+<br>
+Figure 7: Flowchart of steps followed when calculating the MFCC.
+</p>
 
-**FIGURE**
+A sample output of the MFCC content of clips containing different adventitious sounds is given below.
+
+<p align="center">
+<img src="images/mfcc_samples.png" width="600">
+<br>
+Figure 8: Sample output of MFCC of clips chosen from each class.  
+</p>
 
 ## Dataset Partitioning
 Since the dataset does not include seperate recordings for training and testing, we randomly partitioned the dataset into training (80%) and testing (20%) by maintaining the class distribution for both sets. For the first classification method (SVM), we perform a 5-fold cross validation to pick the hyperparameters, therefore, no seperate validation dataset is required. As for the second classification method (CNN), we split the training dataset so that 70% of the original dataset is used for training and 10% is used for validation. Fig. **XX1** illustrates the class distribution for CNN system.
