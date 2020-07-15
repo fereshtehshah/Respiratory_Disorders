@@ -203,27 +203,28 @@ Our best CNN model achieved an accuracy of 71%. The normalized confusion matrix 
 Figure 14. Normalized confusion matrix for CNN model
 </p>
 
-Overfitting starts to happen at around the 20th epoch. After the 20th epoch, the testing accuracy starts to increase at a noticeably slower rate than the training accuracy. The testing loss also stops decreasing at this point, while the training loss continues to decrease. Although more training at each epoch does result in a higher validation accuracy, the accuracy gain is much less when compared to the training accuracy. A graph of the training and validation accuracy is shown in Figure 15, and a graph of the training and validation loss is shown in Figure 16.
+Like the SVM model, the recall percentages for the CNN model also correlate well with the distribution of classes in our data. The graph of the normalized class distribution and recall comparison is shown in Figure 15.
+
+<p class="centered" align="center">
+<img src="images/eval_fig5.png" width="600">
+<br>
+Figure 15. Comparison of normalized class distribution and normalized recall for each class in CNN model
+</p>
+
+Overfitting starts to happen at around the 20th epoch. After the 20th epoch, the testing accuracy starts to increase at a noticeably slower rate than the training accuracy. The testing loss also stops decreasing at this point, while the training loss continues to decrease. Although more training at each epoch does result in a higher validation accuracy, the accuracy gain is much less when compared to the training accuracy. A graph of the training and validation accuracy is shown in Figure 16, and a graph of the training and validation loss is shown in Figure 17.
 
 <p class="centered" align="center">
 <img src="images/eval_fig3.png" width="600">
 <br>
-Figure 15. Training and validation accuracy for CNN model across 30 epochs
+Figure 16. Training and validation accuracy for CNN model across 30 epochs
 </p>
 
 <p class="centered" align="center">
 <img src="images/eval_fig4.png" width="600">
 <br>
-Figure 16. Training and validation loss for CNN model across 30 epochs
+Figure 17. Training and validation loss for CNN model across 30 epochs
 </p>
 
-Like the SVM model, the recall percentages for the CNN model also correlate well with the distribution of classes in our data. The graph of the normalized class distribution and recall comparison is shown in Figure 17.
-
-<p class="centered" align="center">
-<img src="images/eval_fig5.png" width="600">
-<br>
-Figure 17. Comparison of normalized class distribution and normalized recall for each class in CNN model
-</p>
 
 ## Dataset Evaluation and Discussion
 The accuracy results of our work is significantly impacted by several factors. Those factors are 1) demographic information, 2) devices used for collecting sound data, 3)location on the body for which data is collected from and 4) unbalanced number of samples in each class as well as different time duration for each recorded sample. Since data is not categorized based on all these factors, preprocessing, feature extraction, and overall data cleaning part was very complicated. These issues have remarkably impacted the classification accuracy. 
