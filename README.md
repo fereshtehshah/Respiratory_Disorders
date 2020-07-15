@@ -57,15 +57,25 @@ b & c) Spectral Pitch & Frequency spectrogram for a crackle sound (Hz/milisecond
 <p align="center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/epyYDJCaaL0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
-
-## Overview of Data and Applied Methods in Literature
+<br>
+<br>
+### Overview of Data and Applied Methods in Literature
 Initially we explored the literature to see how such study is typically done. The main purpose of using the "Respiratory Sound" dataset (which we will explain in next part) is to build a model to classify healthy vs unhealthy lung sounds, or to build a model to classify respiratory diseases through detection of sound anomalies. The machine learning pipeline that most of existing projects have used include three phases. First one is preprocessing of respiratory sound through noise reduction and audio filtering techniques. 
 The second step is feature extraction using signal processing methods like spectral analysis, cepstral analysis, wavelet transforms, and statistics. And the third step is classification, in which Artificial Neural Networks, Support vector machines, K-nearest Neighbors, and Gaussian Mixture models have been the most popular used classifiers. 
 
 The most promising outcome is related to those projects which have used MFCC as one of the main feature extraction methods for audio data and got the best accuracy results from Neural Network based classifications. After an exploratory study in literature, we believe our approach in classifying respiratory sounds consists of three phases; 1. Again preprocessing of the audio signals, and taking advantage of both supervised and unsupervised learnings. To the best of our knowledge, there is not a study that uses the (Mel Frequency Cepstral Coefficients) MFCC features to classify the adventitious sounds into the specified four classes using SVM or CNN. In the light of similar works, we expect to achieve better results with the CNN based approach than the SVM approach as CNN approach is expected to learn the underlying distinctive features better than the SVM. ​
 
+<p align="center">
+<img src="images/ML pipeline.png" width="600">
+<br>
+Figure 4: Workflow from preprocessing to classification 
+
+</p>
 
 
+
+<br>
+<br>
 # Data
 
 Data is taken from the _Respiratory Sound Database_, created by two research teams in Portugal and Greece. It consists of 920 recordings. Each recording varies in length. A scatter plot of the length of recordings is given in **FIGURE**. Recordings were taken from 126 patients and each recording is annotated. Annotations are comprised of beginning and end times of each respiratory cycle and whether the cycle contains crackle and/or wheeze. Crackles and wheezes are called adventitious sounds and the presence of them is used by health care professionals when diagnosing respiratory diseases. The number of respiratory cycles containing each adventitious cycle is shown in **PLOT**.
