@@ -2,7 +2,7 @@
 
 # Introduction
 ## Motivation
-The emergence of the 2019 novel coronavirus (2019-nCoV) has caused a large global outbreak and major public health issues <sup>[](#issues)</sup>. Viral pneumonia, difficulty in breathing and dyspnea became known as key symptoms in infected patients <sup>[](#patients)</sup> and in severe cases caused uncountable deaths since the virus outbreak <sup>[](#outbreak)</sup>.  These circumstances that have dramatically impacted all aspects of our lives highlight the importance of  early and automated diagnosis of such respiratory disorders more than ever. Moreover, it emphasized the necessity of telemedicine and smart telediagnosis of disease while the availability of professional physicians are low and the risk of in-person check outs are high. 
+The emergence of the 2019 novel coronavirus (2019-nCoV) has caused a large global outbreak and major public health issues <sup>[15](#issues)</sup>. Viral pneumonia, difficulty in breathing and dyspnea became known as key symptoms in infected patients <sup>[](#patients)</sup> and in severe cases caused uncountable deaths since the virus outbreak <sup>[](#outbreak)</sup>.  These circumstances that have dramatically impacted all aspects of our lives highlight the importance of  early and automated diagnosis of such respiratory disorders more than ever. Moreover, it emphasized the necessity of telemedicine and smart telediagnosis of disease while the availability of professional physicians are low and the risk of in-person check outs are high. 
 
 The current situation has highly motivated us to consider our project as an opportunity to develop a telemedicine platform for remote, automated diagnosis of adventitious pathological sounds which can contribute to diagnosis of respiratory disorders. Our system may provide a better chance of benefiting from treatments as well as preventing the spread of the coronavirus. Moreover, in a broader context, it can assist pulmonologists to diagnose varying degrees of sound abnormalities and lung ailments including asthma, chronic obstructive pulmonary disease, pneumonia, infection, and inflammation of the airways and facilitate the long-term, remote monitoring and treatments in inexpensive, non-invasive, and safe ways. 
 
@@ -122,7 +122,7 @@ For the first classification method of our project, we combined an unsupervised 
 
 The MFCC-based features exist in a 2-dimensional space where the first and second dimensions represent the time and frequency information, respectively. Hence, the <img src="https://render.githubusercontent.com/render/math?math=i^{th}">  input data <img src="https://render.githubusercontent.com/render/math?math=\mathbf{x}_i \in \mathbb{R}^{TxD}"> where T is the number of time-windows and D is the number of frequency bins. As can be seen in the figures above, the features are sparsely distributed and most of these features show similar characteristics across different classes. This implies that the dataset contains significant amount of redundant information. In an effort to reduce the dimensionality of the dataset and hence increase the learning rate while keeping the variation within the dataset, we propose to utilize principal component analysis (PCA).
 
-PCA is a commonly used unsupervised learning technique in machine learning that projects the dataset into a lower dimensional dataset in an optimal manner that maximizes the remained variance <sup>[30](#pca)</sup>  . PCA performs a linear transformation and is therefore useful for datasets that are linearly seperable. In conventional PCA application, the input data for each sample is represented as a vector (1-dimensional). Therefore, the whole dataset can be represented as a 2-dimensional matrix that consists the stacked input vectors. Firstly, the dataset is centered to avoid a biased projection. Later, the centered data matrix is expressed in singular value decomposition form. The projection is performed by keeping the largest singular values and their corresponding eigenvectors. The number of the singular values that are utilized can be determined manually or can be chosen so that the explained variance of the original dataset achieves a certain threshold.
+PCA is a commonly used unsupervised learning technique in machine learning that projects the dataset into a lower dimensional dataset in an optimal manner that maximizes the remained variance <sup>[31](#pca)</sup>  . PCA performs a linear transformation and is therefore useful for datasets that are linearly seperable. In conventional PCA application, the input data for each sample is represented as a vector (1-dimensional). Therefore, the whole dataset can be represented as a 2-dimensional matrix that consists the stacked input vectors. Firstly, the dataset is centered to avoid a biased projection. Later, the centered data matrix is expressed in singular value decomposition form. The projection is performed by keeping the largest singular values and their corresponding eigenvectors. The number of the singular values that are utilized can be determined manually or can be chosen so that the explained variance of the original dataset achieves a certain threshold.
 
 Our MFCC-based features lie in a 2-dimensional space. To be able to utilize the conventional PCA scheme, we flatten the features so that the features are represented as a vector. Then, we can apply the common PCA procedure. However, PCA is not agnostic to different scalings of the features. Therefore, we standardize the data so that all features are similarly scaled.
 
@@ -149,10 +149,10 @@ In total there were 10 candidates and 50 fits. Each fit takes about 4 minutes wi
 
 ## Convolutional Neural Networks (CNN)
 
-As the second classification approach, we propose to use a Convolutional Neural Network based system. The Convolutional Neural Network (CNN) is a neural network classification technique that is commonly used in image classification <sup>[23](#imagenet)</sup> <sup>[27](#vggnet)</sup>. As opposed to the traditional neural networks, where each input feature is associated with seperate parameters, in CNN, parameters are shared among the features. This allows the network for learning local features. By this means, CNN automatically learns the important features without requiring extra feature extraction.
+As the second classification approach, we propose to use a Convolutional Neural Network based system. The Convolutional Neural Network (CNN) is a neural network classification technique that is commonly used in image classification <sup>[24](#imagenet)</sup> <sup>[28](#vggnet)</sup>. As opposed to the traditional neural networks, where each input feature is associated with seperate parameters, in CNN, parameters are shared among the features. This allows the network for learning local features. By this means, CNN automatically learns the important features without requiring extra feature extraction.
 CNN-based architectures construct a deep layered structure through convolutional kernels, which are learned from the data to extract complex features. Furthermore, CNN is computationally efficient. Convolution and pooling operations allow for parameter sharing and efficient computation.
 
-In our project, the MFCC-based features are 2-dimensional. Therefore, they can be treated as images and the assignment can be translated into an image classification task. After experimenting with commonly used CNN structures such as AlexNet <sup>[23](#imagenet)</sup> and VGGNet <sup>[27](#vggnet)</sup>, we designed our own CNN-based neural network structure as shown in Figure 11.
+In our project, the MFCC-based features are 2-dimensional. Therefore, they can be treated as images and the assignment can be translated into an image classification task. After experimenting with commonly used CNN structures such as AlexNet <sup>[24](#imagenet)</sup> and VGGNet <sup>[28](#vggnet)</sup>, we designed our own CNN-based neural network structure as shown in Figure 11.
 
 Our network includes three convolutional layers (each followed by a max-pooling layer) and four fully connected layers as well as the output layer. The convolution operations are performed with a kernel size of 15x15 and stride of 1. The fully connected layers have 6784, 2048, 1024 and 128 neurons, respectively. The activation function for all convolutional and fully connected layers is Rectified Linear Unit (ReLU). The output layer, consisting of 4 nodes, implements a softmax activation function. The max-pooling operations are performed with a kernel of size 2x2 and stride 1.
 
@@ -253,70 +253,70 @@ Possible considerations to increase the performance of the system are listed as 
 # Conclusion
 
 # References
-<a name="dataset">[0]</a> Bhateja, Vikrant, Ahmad Taquee, and Dilip Kumar Sharma. 2019. “Pre-Processing and Classification of Cough Sounds in Noisy Environment Using SVM.” 2019 4th International Conference on Information Systems and Computer Networks (ISCON). https://doi.org/10.1109/iscon47742.2019.9036277.
+<a name="dataset">[1]</a> Bhateja, Vikrant, Ahmad Taquee, and Dilip Kumar Sharma. 2019. “Pre-Processing and Classification of Cough Sounds in Noisy Environment Using SVM.” 2019 4th International Conference on Information Systems and Computer Networks (ISCON). https://doi.org/10.1109/iscon47742.2019.9036277.
 
-<a name="dataset">[1]</a> Chambres, Gaetan, Pierre Hanna, and Myriam Desainte-Catherine. 2018. “Automatic Detection of Patient with Respiratory Diseases Using Lung Sound Analysis.” 2018 International Conference on Content-Based Multimedia Indexing (CBMI). https://doi.org/10.1109/cbmi.2018.8516489.
+<a name="dataset">[2]</a> Chambres, Gaetan, Pierre Hanna, and Myriam Desainte-Catherine. 2018. “Automatic Detection of Patient with Respiratory Diseases Using Lung Sound Analysis.” 2018 International Conference on Content-Based Multimedia Indexing (CBMI). https://doi.org/10.1109/cbmi.2018.8516489.
 
-<a name="dataset">[2]</a> Chen, Hai, Xiaochen Yuan, Zhiyuan Pei, Mianjie Li, and Jianqing Li. 2019. “Triple-Classification of Respiratory Sounds Using Optimized S-Transform and Deep Residual Networks.” IEEE Access. https://doi.org/10.1109/access.2019.2903859.
+<a name="dataset">[3]</a> Chen, Hai, Xiaochen Yuan, Zhiyuan Pei, Mianjie Li, and Jianqing Li. 2019. “Triple-Classification of Respiratory Sounds Using Optimized S-Transform and Deep Residual Networks.” IEEE Access. https://doi.org/10.1109/access.2019.2903859.
 
-<a name="dataset">[3]</a> Chowdhury, S. K., and A. K. Majumder. 1982. “Frequency Analysis of Adventitious Lung Sounds.” Journal of Biomedical Engineering. https://doi.org/10.1016/0141-5425(82)90048-6.
+<a name="dataset">[4]</a> Chowdhury, S. K., and A. K. Majumder. 1982. “Frequency Analysis of Adventitious Lung Sounds.” Journal of Biomedical Engineering. https://doi.org/10.1016/0141-5425(82)90048-6.
 
-<a name="dataset">[4]</a> Cinkooglu, Akin, Department of Radiology, Ege University School of Medicine, Izmir, Turkey, Selen Bayraktaroglu, Recep Savas, et al. 2020. “Lung Changes on Chest CT During 2019 
+<a name="dataset">[5]</a> Cinkooglu, Akin, Department of Radiology, Ege University School of Medicine, Izmir, Turkey, Selen Bayraktaroglu, Recep Savas, et al. 2020. “Lung Changes on Chest CT During 2019 
 
-<a name="dataset">[5]</a> Novel Coronavirus (COVID-19) Pneumonia.” European Journal of Breast Health. https://doi.org/10.5152/ejbh.2020.010420.
+<a name="dataset">[6]</a> Novel Coronavirus (COVID-19) Pneumonia.” European Journal of Breast Health. https://doi.org/10.5152/ejbh.2020.010420.
 
-<a name="dataset">[6]</a> Cugell, David, Noam Gavriely, and Dan Zellner. 2012. “Lung Sounds and the Stethoscope — a Lung Sounds Primer.” MedEdPORTAL. https://doi.org/10.15766/mep_2374-8265.9066.
+<a name="dataset">[7]</a> Cugell, David, Noam Gavriely, and Dan Zellner. 2012. “Lung Sounds and the Stethoscope — a Lung Sounds Primer.” MedEdPORTAL. https://doi.org/10.15766/mep_2374-8265.9066.
 
-<a name="dataset">[7]</a> Devangan, Hupendra, Nitin Jain, and Chouksey Engineering College Bilaspur India. 2015. “A Review on Classification of Adventitious Lung Sounds.” International Journal of Engineering Research and. https://doi.org/10.17577/ijertv4is051274.
+<a name="dataset">[8]</a> Devangan, Hupendra, Nitin Jain, and Chouksey Engineering College Bilaspur India. 2015. “A Review on Classification of Adventitious Lung Sounds.” International Journal of Engineering Research and. https://doi.org/10.17577/ijertv4is051274.
 
-<a name="dataset">[8]</a> García-Ordás, María Teresa, José Alberto Benítez-Andrades, Isaías García-Rodríguez, Carmen Benavides, and Héctor Alaiz-Moretón. 2020. “Detecting Respiratory Pathologies Using
+<a name="dataset">[9]</a> García-Ordás, María Teresa, José Alberto Benítez-Andrades, Isaías García-Rodríguez, Carmen Benavides, and Héctor Alaiz-Moretón. 2020. “Detecting Respiratory Pathologies Using
 Convolutional Neural Networks and Variational Autoencoders for Unbalancing Data.” Sensors  20 (4). https://doi.org/10.3390/s20041214.
 
-<a name="dataset">[9]</a> İçer, Semra, and Şerife Gengeç. 2014. “Classification and Analysis of Non-Stationary Characteristics of Crackle and Rhonchus Lung Adventitious Sounds.” Digital Signal Processing. https://doi.org/10.1016/j.dsp.2014.02.001.
+<a name="dataset">[10]</a> İçer, Semra, and Şerife Gengeç. 2014. “Classification and Analysis of Non-Stationary Characteristics of Crackle and Rhonchus Lung Adventitious Sounds.” Digital Signal Processing. https://doi.org/10.1016/j.dsp.2014.02.001.
 
-<a name="adam">[10]</a> Kingma, Diederik P., and Jimmy Ba. "Adam: A method for stochastic optimization." arXiv preprint arXiv:1412.6980 (2014).
+<a name="adam">[11]</a> Kingma, Diederik P., and Jimmy Ba. "Adam: A method for stochastic optimization." arXiv preprint arXiv:1412.6980 (2014).
 
-<a name="dataset">[11]</a> Lehrer, Steven. 2018. Understanding Lung Sounds: Third Edition. Steven Lehrer.
+<a name="dataset">[12]</a> Lehrer, Steven. 2018. Understanding Lung Sounds: Third Edition. Steven Lehrer.
 
-<a name="dataset">[12]</a> Liu, Renyu, Shengsheng Cai, Kexin Zhang, and Nan Hu. 2019. “Detection of Adventitious Respiratory Sounds Based on Convolutional Neural Network.” 2019 International Conference on Intelligent Informatics and Biomedical Sciences (ICIIBMS). https://doi.org/10.1109/iciibms46890.2019.8991459.
+<a name="dataset">[13]</a> Liu, Renyu, Shengsheng Cai, Kexin Zhang, and Nan Hu. 2019. “Detection of Adventitious Respiratory Sounds Based on Convolutional Neural Network.” 2019 International Conference on Intelligent Informatics and Biomedical Sciences (ICIIBMS). https://doi.org/10.1109/iciibms46890.2019.8991459.
 
-<a name="dataset">[13]</a> Makic, Mary Beth Flynn. 2020. “Prone Position of Patients with COVID-19 and Acute Respiratory Distress Syndrome.” Journal of PeriAnesthesia Nursing. https://doi.org/10.1016/j.jopan.2020.05.008.
+<a name="dataset">[14]</a> Makic, Mary Beth Flynn. 2020. “Prone Position of Patients with COVID-19 and Acute Respiratory Distress Syndrome.” Journal of PeriAnesthesia Nursing. https://doi.org/10.1016/j.jopan.2020.05.008.
 
-<a name="dataset">[14]</a> Marini, John J., and Luciano Gattinoni. 2020. “Management of COVID-19 Respiratory Distress.” JAMA. https://doi.org/10.1001/jama.2020.6825.
+<a name="dataset">[15]</a> Marini, John J., and Luciano Gattinoni. 2020. “Management of COVID-19 Respiratory Distress.” JAMA. https://doi.org/10.1001/jama.2020.6825.
 
-<a name="dataset">[15]</a> Marques, Alda, and Ana Oliveira. 2018. “Normal Versus Adventitious Respiratory Sounds.” Breath Sounds. https://doi.org/10.1007/978-3-319-71824-8_10.
+<a name="dataset">[16]</a> Marques, Alda, and Ana Oliveira. 2018. “Normal Versus Adventitious Respiratory Sounds.” Breath Sounds. https://doi.org/10.1007/978-3-319-71824-8_10.
 
-<a name="dataset">[16]</a> Nakamura, Naoki, Masaru Yamashita, and Shoichi Matsunaga. 2016. “Detection of Patients Considering Observation Frequency of Continuous and Discontinuous Adventitious Sounds in Lung Sounds.” 2016 38th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC). https://doi.org/10.1109/embc.2016.7591472.
+<a name="dataset">[17]</a> Nakamura, Naoki, Masaru Yamashita, and Shoichi Matsunaga. 2016. “Detection of Patients Considering Observation Frequency of Continuous and Discontinuous Adventitious Sounds in Lung Sounds.” 2016 38th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC). https://doi.org/10.1109/embc.2016.7591472.
 
-<a name="dataset">[17]</a> Ntalampiras, Stavros, and Ilyas Potamitis. 2019. “Classification of Sounds Indicative of Respiratory Diseases.” Engineering Applications of Neural Networks. https://doi.org/10.1007/978-3-030-20257-6_8.
+<a name="dataset">[18]</a> Ntalampiras, Stavros, and Ilyas Potamitis. 2019. “Classification of Sounds Indicative of Respiratory Diseases.” Engineering Applications of Neural Networks. https://doi.org/10.1007/978-3-030-20257-6_8.
 
-<a name="dataset">[18]</a> Okubo, Takanori, Masaru Yamashita, Katsuya Yamauchi, and Shoichi Matsunaga. 2013. “Modeling Occurrence Tendency of Adventitious Sounds and Noises for Detection of Abnormal Lung Sounds.” https://doi.org/10.1121/1.4800330.
+<a name="dataset">[19]</a> Okubo, Takanori, Masaru Yamashita, Katsuya Yamauchi, and Shoichi Matsunaga. 2013. “Modeling Occurrence Tendency of Adventitious Sounds and Noises for Detection of Abnormal Lung Sounds.” https://doi.org/10.1121/1.4800330.
 
-<a name="dataset">[19]</a> Pan, Feng, Tianhe Ye, Peng Sun, Shan Gui, Bo Liang, Lingli Li, Dandan Zheng, et al. 2020. “Time Course of Lung Changes at Chest CT during Recovery from Coronavirus Disease 2019 (COVID-19).” Radiology 295 (3): 715–21.
+<a name="dataset">[20]</a> Pan, Feng, Tianhe Ye, Peng Sun, Shan Gui, Bo Liang, Lingli Li, Dandan Zheng, et al. 2020. “Time Course of Lung Changes at Chest CT during Recovery from Coronavirus Disease 2019 (COVID-19).” Radiology 295 (3): 715–21.
 
-<a name="dataset">[20]</a> Perna, Diego. 2018. “Convolutional Neural Networks Learning from Respiratory Data.” 2018 IEEE International Conference on Bioinformatics and Biomedicine (BIBM). https://doi.org/10.1109/bibm.2018.8621273.
+<a name="dataset">[21]</a> Perna, Diego. 2018. “Convolutional Neural Networks Learning from Respiratory Data.” 2018 IEEE International Conference on Bioinformatics and Biomedicine (BIBM). https://doi.org/10.1109/bibm.2018.8621273.
 
-<a name="dataset">[21]</a> Ploysongsang, Yongyudh, Vijay K. Iyer, and Panapakkam A. Ramamoorthy. 1991. “Reproducibility of the Vesicular Breath Sounds in Normal Subjects.” Respiration. https://doi.org/10.1159/000195918.
+<a name="dataset">[22]</a> Ploysongsang, Yongyudh, Vijay K. Iyer, and Panapakkam A. Ramamoorthy. 1991. “Reproducibility of the Vesicular Breath Sounds in Normal Subjects.” Respiration. https://doi.org/10.1159/000195918.
 
-<a name="dataset">[22]</a> Pramono, Renard Xaviero Adhi, Stuart Bowyer, and Esther Rodriguez-Villegas. 2017. “Automatic Adventitious Respiratory Sound Analysis: A Systematic Review.” PloS One 12 (5): e0177926.
+<a name="dataset">[23]</a> Pramono, Renard Xaviero Adhi, Stuart Bowyer, and Esther Rodriguez-Villegas. 2017. “Automatic Adventitious Respiratory Sound Analysis: A Systematic Review.” PloS One 12 (5): e0177926.
 
-<a name="imagenet">[23]</a> Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks." Advances in neural information processing systems. 2012.
+<a name="imagenet">[24]</a> Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks." Advances in neural information processing systems. 2012.
 
-<a name="dataset">[24]</a> Rocha, B. M., D. Filos, L. Mendes, I. Vogiatzis, E. Perantoni, E. Kaimakamis, P. Natsiavas, et al. 2018. “Α Respiratory Sound Database for the Development of Automated Classification.” Precision Medicine Powered by pHealth and Connected Health. https://doi.org/10.1007/978-981-10-7419-6_6.
+<a name="dataset">[25]</a> Rocha, B. M., D. Filos, L. Mendes, I. Vogiatzis, E. Perantoni, E. Kaimakamis, P. Natsiavas, et al. 2018. “Α Respiratory Sound Database for the Development of Automated Classification.” Precision Medicine Powered by pHealth and Connected Health. https://doi.org/10.1007/978-981-10-7419-6_6.
 
-<a name="dataset">[25]</a> Saraiva, A., D. Santos, A. Francisco, Jose Sousa, N. Ferreira, Salviano Soares, and Antonio Valente. 2020. “Classification of Respiratory Sounds with Convolutional Neural Network.” Proceedings of the 13th International Joint Conference on Biomedical Engineering Systems and Technologies. https://doi.org/10.5220/0008965101380144.
+<a name="dataset">[26]</a> Saraiva, A., D. Santos, A. Francisco, Jose Sousa, N. Ferreira, Salviano Soares, and Antonio Valente. 2020. “Classification of Respiratory Sounds with Convolutional Neural Network.” Proceedings of the 13th International Joint Conference on Biomedical Engineering Systems and Technologies. https://doi.org/10.5220/0008965101380144.
 
-<a name="dataset">[26]</a> Sawant, R. K., and A. A. Ghatol. 2015. “Classification of Respiratory Diseases Using Respiratory Sound Analysis.” International Journal of Signal Processing Systems. https://doi.org/10.12720/ijsps.4.1.62-66.
+<a name="dataset">[27]</a> Sawant, R. K., and A. A. Ghatol. 2015. “Classification of Respiratory Diseases Using Respiratory Sound Analysis.” International Journal of Signal Processing Systems. https://doi.org/10.12720/ijsps.4.1.62-66.
 Scott, Gregory, Edward J. Presswood, Boikanyo Makubate, and Frank Cross. 2013. “Lung Sounds: How Doctors Draw Crackles and Wheeze.” Postgraduate Medical Journal. https://doi.org/10.1136/postgradmedj-2012-131410.
 
-<a name="vggnet">[27]</a> Simonyan, Karen, and Andrew Zisserman. "Very deep convolutional networks for large-scale image recognition." arXiv preprint arXiv:1409.1556 (2014).
+<a name="vggnet">[28]</a> Simonyan, Karen, and Andrew Zisserman. "Very deep convolutional networks for large-scale image recognition." arXiv preprint arXiv:1409.1556 (2014).
 
-<a name="dataset">[28]</a> Spieth, P. M., and H. Zhang. 2011. “Analyzing Lung Crackle Sounds: Stethoscopes and beyond.” Intensive Care Medicine. https://doi.org/10.1007/s00134-011-2292-3.
+<a name="dataset">[29]</a> Spieth, P. M., and H. Zhang. 2011. “Analyzing Lung Crackle Sounds: Stethoscopes and beyond.” Intensive Care Medicine. https://doi.org/10.1007/s00134-011-2292-3.
 
-<a name="dataset">[29]</a> Vrbancic, Grega, Iztok Jr Fister, and Vili Podgorelec. 2019. “Automatic Detection of Heartbeats in Heart Sound Signals Using Deep Convolutional Neural Networks.” Elektronika Ir Elektrotechnika. https://doi.org/10.5755/j01.eie.25.3.23680.
+<a name="dataset">[30]</a> Vrbancic, Grega, Iztok Jr Fister, and Vili Podgorelec. 2019. “Automatic Detection of Heartbeats in Heart Sound Signals Using Deep Convolutional Neural Networks.” Elektronika Ir Elektrotechnika. https://doi.org/10.5755/j01.eie.25.3.23680.
 
-<a name="pca">[30]</a> Wold, Svante, Kim Esbensen, and Paul Geladi. "Principal component analysis." Chemometrics and intelligent laboratory systems 2.1-3 (1987): 37-52.
+<a name="pca">[31]</a> Wold, Svante, Kim Esbensen, and Paul Geladi. "Principal component analysis." Chemometrics and intelligent laboratory systems 2.1-3 (1987): 37-52.
 
-<a name="dataset">[31]</a> Xu, Zhe, Lei Shi, Yijin Wang, Jiyuan Zhang, Lei Huang, Chao Zhang, Shuhong Liu, et al. 2020. “Pathological Findings of COVID-19 Associated with Acute Respiratory Distress Syndrome.” The Lancet. Respiratory Medicine 8 (4): 420–22.
+<a name="dataset">[32]</a> Xu, Zhe, Lei Shi, Yijin Wang, Jiyuan Zhang, Lei Huang, Chao Zhang, Shuhong Liu, et al. 2020. “Pathological Findings of COVID-19 Associated with Acute Respiratory Distress Syndrome.” The Lancet. Respiratory Medicine 8 (4): 420–22.
 
 
