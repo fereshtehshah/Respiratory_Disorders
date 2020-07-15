@@ -108,12 +108,12 @@ Figure 8: Sample output of MFCC of clips chosen from each class.
 </p>
 
 ## Dataset Partitioning
-Since the dataset does not include seperate recordings for training and testing, we randomly partitioned the dataset into training (80%) and testing (20%) by maintaining the class distribution for both sets. For the first classification method (SVM), we perform a 5-fold cross validation to pick the hyperparameters, therefore, no seperate validation dataset is required. As for the second classification method (CNN), we split the training dataset so that 70% of the original dataset is used for training and 10% is used for validation. Fig. **XX1** illustrates the class distribution for CNN system.
+Since the dataset does not include seperate recordings for training and testing, we randomly partitioned the dataset into training (80%) and testing (20%) by maintaining the class distribution for both sets. For the first classification method (SVM), we perform a 5-fold cross validation to pick the hyperparameters, therefore, no seperate validation dataset is required. As for the second classification method (CNN), we split the training dataset so that 70% of the original dataset is used for training and 10% is used for validation. Fig. 9 illustrates the class distribution for CNN system.
 
 <p align="center">
 <img src="images/classDistribution.png" width="600">
 <br>
-Figure **XX1**. Distribution of the dataset to be used for CNN-based system
+Figure 9. Distribution of the dataset to be used for CNN-based system.
 </p>
 
 # Classification Methods
@@ -129,12 +129,12 @@ PCA is a commonly used unsupervised learning technique in machine learning that 
 
 Our MFCC-based features lie in a 2-dimensional space. To be able to utilize the conventional PCA scheme, we flatten the features so that the features are represented as a vector. Then, we can apply the common PCA procedure. However, PCA is not agnostic to different scalings of the features. Therefore, we standardize the data so that all features are similarly scaled.
 
-To give a perspective of the dimensions, when the maximum length of the recording are limited to 5 seconds, the resulting MFCC features have the dimension 20 x 431. Therefore, we have 8620 features in total. As explained above, the values for most of these features are the same across the different classes and redundant. In Figure **XX2**, how the explained cumulative variance changes for increasing number of components is presented. We note that we still keep the 99% of the original variance when the dimensionality is reduced to 1916. This reduction is very significant because it becomes useful to increase the learning rate in the next step.
+To give a perspective of the dimensions, when the maximum length of the recording are limited to 5 seconds, the resulting MFCC features have the dimension 20 x 431. Therefore, we have 8620 features in total. As explained above, the values for most of these features are the same across the different classes and redundant. In Figure 10 how the explained cumulative variance changes for increasing number of components is presented. We note that we still keep the 99% of the original variance when the dimensionality is reduced to 1916. This reduction is very significant because it becomes useful to increase the learning rate in the next step.
 
 <p align="center">
 <img src="images/PCA_explained_varience.png" width="600">
 <br>
-Figure **XX2**. Explained variance for increasing number of kept principal components
+Figure 10. Explained variance for increasing number of kept principal components
 </p>
 
 ### Support Vector Machines (SVM)
@@ -154,14 +154,14 @@ The overal efficiency and accuracy result of our model is discussed in next part
 As the second classification approach, we propose to use a Convolutional Neural Network based system. The Convolutional Neural Network (CNN) is a neural network classification technique that is commonly used in image classification <sup>[2](#imagenet)</sup> <sup>[3](#vggnet)</sup>. As opposed to the traditional neural networks, where each input feature is associated with seperate parameters, in CNN, parameters are shared among the features. This allows the network for learning local features. By this means, CNN automatically learns the important features without requiring extra feature extraction.
 CNN-based architectures construct a deep layered structure through convolutional kernels, which are learned from the data to extract complex features. Furthermore, CNN is computationally efficient. Convolution and pooling operations allow for parameter sharing and efficient computation.
 
-In our project, the MFCC-based features are 2-dimensional. Therefore, they can be treated as images and the assignment can be translated into an image classification task. After experimenting with commonly used CNN structures such as AlexNet <sup>[2](#imagenet)</sup> and VGGNet <sup>[3](#vggnet)</sup>, we designed our own CNN-based neural network structure as shown in Fig. **??**.
+In our project, the MFCC-based features are 2-dimensional. Therefore, they can be treated as images and the assignment can be translated into an image classification task. After experimenting with commonly used CNN structures such as AlexNet <sup>[2](#imagenet)</sup> and VGGNet <sup>[3](#vggnet)</sup>, we designed our own CNN-based neural network structure as shown in Figure 11.
 
 Our network includes three convolutional layers (each followed by a max-pooling layer) and four fully connected layers as well as the output layer. The convolution operations are performed with a kernel size of 15x15 and stride of 1. The fully connected layers have 6784, 2048, 1024 and 128 neurons, respectively. The activation function for all convolutional and fully connected layers is Rectified Linear Unit (ReLU). The output layer, consisting of 4 nodes, implements a softmax activation function. The max-pooling operations are performed with a kernel of size 2x2 and stride 1.
 
 <p align="center">
 <img src="images/cnn_2d_arch.png" width="1000">
 <br>
-Figure XX. Architecture of the CNN-based neural network
+Figure 11. Architecture of the CNN-based neural network
 </p>
 
 
@@ -175,52 +175,52 @@ and the number of classes is C = 4. Then, we train our algorithm and evaluate it
 # Evaluation & Results
 ## SVM Results
 
-Our best SVM model achieved an accuracy of 69%. Interestingly, the recall percentages correlate well with the distribution of classes in our data. When looking at the unbalanced dataset, as less training data was available in each class, the corresponding recall values also decreased. Figure 0 is the confusion matrix with percent recall values, and figure 1 illustrates this by normalizing the number of clips in each class and the recall of each class.
+Our best SVM model achieved an accuracy of 69%. Interestingly, the recall percentages correlate well with the distribution of classes in our data. When looking at the unbalanced dataset, as less training data was available in each class, the corresponding recall values also decreased. Figure 12 is the confusion matrix with percent recall values, and Figure 13 illustrates this by normalizing the number of clips in each class and the recall of each class.
 
 <p align="center">
 <img src="images/eval_fig0.png" width="500">
 <br>
-Figure 0. Normalized confusion matrix for SVM model
+Figure 12. Normalized confusion matrix for SVM model
 </p>
 
 <p align="center">
 <img src="images/eval_fig1.png" width="600">
 <br>
-Figure 1. Comparison of normalized class distribution and normalized recall for each class in SVM model
+Figure 13. Comparison of normalized class distribution and normalized recall for each class in SVM model
 </p>
 
 The unbalanced data could be the reason for our relatively low accuracy of 69%. The healthy class, which had the most data available (3642 clips) achieved a recall of 82%, while the both class, with the least data available (506 clips) achieved a recall of 37%.
 
 ## CNN Results
 
-Our best CNN model achieved an accuracy of 71%. The normalized confusion matrix is shown in Figure 2.
+Our best CNN model achieved an accuracy of 71%. The normalized confusion matrix is shown in Figure 14.
 
 <p align="center">
 <img src="images/eval_fig2.png" width="500">
 <br>
-Figure 2. Normalized confusion matrix for CNN model
+Figure 14. Normalized confusion matrix for CNN model
 </p>
 
-Overfitting starts to happen at around the 20th epoch. After the 20th epoch, the testing accuracy starts to increase at a noticeably slower rate than the training accuracy. The testing loss also stops decreasing at this point, while the training loss continues to decrease. Although more training at each epoch does result in a higher validation accuracy, the accuracy gain is much less when compared to the training accuracy. A graph of the training and validation accuracy is shown in Figure 3, and a graph of the training and validation loss is shown in Figure 4.
+Overfitting starts to happen at around the 20th epoch. After the 20th epoch, the testing accuracy starts to increase at a noticeably slower rate than the training accuracy. The testing loss also stops decreasing at this point, while the training loss continues to decrease. Although more training at each epoch does result in a higher validation accuracy, the accuracy gain is much less when compared to the training accuracy. A graph of the training and validation accuracy is shown in Figure 15, and a graph of the training and validation loss is shown in Figure 16.
 
 <p align="center">
 <img src="images/eval_fig3.png" width="600">
 <br>
-Figure 3. Training and validation accuracy for CNN model across 30 epochs
+Figure 15. Training and validation accuracy for CNN model across 30 epochs
 </p>
 
 <p align="center">
 <img src="images/eval_fig4.png" width="600">
 <br>
-Figure 4. Training and validation loss for CNN model across 30 epochs
+Figure 16. Training and validation loss for CNN model across 30 epochs
 </p>
 
-Like the SVM model, the recall percentages for the CNN model also correlate well with the distribution of classes in our data. The graph of the normalized class distribution and recall comparison is shown in Figure 5.
+Like the SVM model, the recall percentages for the CNN model also correlate well with the distribution of classes in our data. The graph of the normalized class distribution and recall comparison is shown in Figure 17.
 
 <p align="center">
 <img src="images/eval_fig5.png" width="600">
 <br>
-Figure 5. Comparison of normalized class distribution and normalized recall for each class in CNN model
+Figure 17. Comparison of normalized class distribution and normalized recall for each class in CNN model
 </p>
 
 ## Dataset Evaluation
