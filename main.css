@@ -1,1 +1,3 @@
 p{ text-align: justify;}
+
+p.centered {text-align: center !important; align: center !important}
