@@ -98,7 +98,7 @@ Preprocessing of the data starts from importing the sound files, resampling and 
 Mel Frequency Cepstrum Coefficients were used as features of the sound clips. MFCCs are widely used in speech recognition systems. They are also being used extensively in previous work on detection of adventitious respiratory sounds as they provide a measure of short term power spectrum of time domain signals. Both the frequency and time content are important to distinguish between different adventitious sounds, since different adventitious sounds can exist in a single clip at different time periods and they differ in duration. Therefore, MFCC is helpful in capturing the change in frequency content of a signal over time. Frequencies are placed on a mel scale, which is a nonlinear scale of frequencies whose distances are percieved to be equal by the human auditory system. Output of MFCC is a 2 dimensional feature vector (time and frequency), which was then flattened into a one dimensional array before further processing. The process of calculating MFCC is given in Figure 7.
 
 <p align="center">
-<img src="images/mfcc_flowchart.png" width="600">
+<img src="images/mfcc_flowchart.png" width="400">
 <br>
 Figure 7: Flowchart of steps followed when calculating the MFCC.
 </p>
