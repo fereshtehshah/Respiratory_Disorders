@@ -67,7 +67,7 @@ Figure 4: Workflow from preprocessing to classification
 
 ## Data
 
-Data is taken from the _Respiratory Sound Database_, created by two research teams in Portugal and Greece <sup>[0](#dataset)</sup> . It consists of 920 recordings. Each recording varies in length. A scatter plot of the length of recordings is given in **FIGURE**. Recordings were taken from 126 patients and each recording is annotated. Annotations are comprised of beginning and end times of each respiratory cycle and whether the cycle contains crackle and/or wheeze. Crackles and wheezes are called adventitious sounds and the presence of them is used by health care professionals when diagnosing respiratory diseases. The number of respiratory cycles containing each adventitious cycle is shown in **PLOT**.
+Data is taken from the _Respiratory Sound Database_, created by two research teams in Portugal and Greece <sup>[0](#dataset)</sup> . It consists of 920 recordings. Each recording varies in length. A histogram of the length of recordings is given in Figure 5. Recordings were taken from 126 patients and each recording is annotated. Annotations are comprised of beginning and end times of each respiratory cycle and whether the cycle contains crackle and/or wheeze. Crackles and wheezes are called adventitious sounds and the presence of them is used by health care professionals when diagnosing respiratory diseases. The number of respiratory cycles containing each adventitious cycle is shown in Figure 6.
 
 <p align="center">
 <img src="images/plt_clip_lengths_hist.png" width="600">
