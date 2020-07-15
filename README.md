@@ -1,9 +1,12 @@
+<link type="text/css" rel="stylesheet" href="main.css" />
+
 **Team Members**: Anjana Nandagopal, Elvan Ugurlu, Fereshteh Shahmiri, Serhat Erdogan, Sukris Vong.
 
 # Introduction
 ## Motivation
+<p>
 The emergence of the 2019 novel coronavirus (2019-nCoV) has caused a large global outbreak and major public health issues <sup>[15](#issues)</sup>. Viral pneumonia, difficulty in breathing and dyspnea became known as key symptoms in infected patients and in severe cases caused uncountable deaths since the virus outbreak <sup>[32](#outbreak)</sup>.  These circumstances that have dramatically impacted all aspects of our lives highlight the importance of  early and automated diagnosis of such respiratory disorders more than ever. Moreover, it emphasized the necessity of telemedicine and smart telediagnosis of disease while the availability of professional physicians are low and the risk of in-person check outs are high. 
-
+</p>
 The current situation has highly motivated us to consider our project as an opportunity to develop a telemedicine platform for remote, automated diagnosis of adventitious pathological sounds which can contribute to diagnosis of respiratory disorders. Our system may provide a better chance of benefiting from treatments as well as preventing the spread of the coronavirus. Moreover, in a broader context, it can assist pulmonologists to diagnose varying degrees of sound abnormalities and lung ailments including asthma, chronic obstructive pulmonary disease, pneumonia, infection, and inflammation of the airways and facilitate the long-term, remote monitoring and treatments in inexpensive, non-invasive, and safe ways. 
 
 ## Objective
