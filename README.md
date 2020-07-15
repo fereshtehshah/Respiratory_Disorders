@@ -51,6 +51,9 @@ a) Typical waveform from crackle- (dB/milisecond). It shows a respiratory cycle 
 b & c) Spectral Pitch & Frequency spectrogram for a crackle sound (Hz/milisecond).
 </p>
 
+<br>
+<br>
+
 <p align="center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/epyYDJCaaL0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
